@@ -1,0 +1,166 @@
+=======================
+IZI 2.0 release notes
+=======================
+
+:release: tbd
+
+Welcome to IZI 2.0
+
+
+Table of contents:
+
+.. contents::
+    :local:
+    :depth: 1
+
+
+.. _compatibility_of_2.0:
+
+Compatibility
+-------------
+
+IZI 2.0 is compatible with Django 1.11, Django 2.0 and Django 2.1 as well as
+Python 3.5 and 3.6.
+
+Support for Python 2.7 and Python 3.4 has been dropped.
+
+.. _new_in_2.0:
+
+What's new in IZI 2.0?
+------------------------
+
+Removal of deprecated features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Support for deprecated product alert email templates was removed The templates
+  for these emails have been replaced as follows:
+
+    - ``customer/alerts/emails/confirmation_subject.txt`` is replaced by
+      ``customer/emails/commtype_product_alert_confirmation_subject.txt``
+    - ``customer/alerts/emails/confirmation_body.txt`` is replaced by
+      ``customer/emails/commtype_product_alert_confirmation_body.txt``
+    - ``customer/alerts/emails/alert_subject.txt`` is replaced by
+      ``customer/emails/commtype_product_alert_subject.txt``
+    - ``customer/alerts/emails/alert_body.txt`` is replaced by
+      ``customer/emails/commtype_product_alert_body.txt``
+
+  Product alert emails are now sent as Communication Events.
+
+- Support for category URLs without a primary key was removed.
+
+  Enforcement of unique slugs for categories was also removed, as enforcing
+  this was inefficient and not threadsafe. Since a primary key is now required
+  for category URLs, there is no need for slugs to be unique.
+
+- ``customer.forms.SetPasswordForm`` and ``customer.forms.PasswordChangeForm``
+  have been removed. Use ``django.contrib.auth.forms.SetPasswordForm`` and
+  ``django.contrib.auth.forms.PasswordChangeForm`` instead.
+
+- The ``views.decorators.staff_member_required`` decorator has been removed. Use
+  ``permissions_required(['is_staff']`` instead.
+
+- The ``UserAddress.num_orders`` property has been removed. Use
+  ``num_orders_as_shipping_address`` and ``num_orders_as_billing_address``
+  instead.
+
+- Backward-compatible dynamic loading of formset classes that have moved in IZI was
+  removed. Projects must update their ``get_class`` calls to use the new paths.
+
+  The paths that have changed are as follows:
+
+  ================================  ==================================  ================
+  Old path                          New path                            Affected classes
+  ================================  ==================================  ================
+  ``basket.forms``                  ``basket.formsets``                 ``BaseBasketLineFormSet``
+
+                                                                        ``BasketLineFormSet``
+
+                                                                        ``BaseSavedLineFormSet``
+
+                                                                        ``SavedLineFormSet``
+  ``dashboard.catalogue.forms``     ``dashboard.catalogue.formsets``    ``BaseStockRecordFormSet``
+
+                                                                        ``StockRecordFormSet``
+
+                                                                        ``BaseProductCategoryFormSet``
+
+                                                                        ``ProductCategoryFormSet``
+
+                                                                        ``BaseProductImageFormSet``
+
+                                                                        ``ProductImageFormSet``
+
+                                                                        ``BaseProductRecommendationFormSet``
+
+                                                                        ``ProductRecommendationFormSet``
+
+                                                                        ``ProductAttributesFormSet``
+
+  ``dashboard.promotions.forms``    ``dashboard.promotions.formsets``   ``OrderedProductFormSet``
+  ``wishlists.forms``               ``wishlists.formsets``              ``LineFormset``
+  ================================  ==================================  ================
+
+Minor changes
+~~~~~~~~~~~~~
+- Dropped ``action=""`` and ``action="."`` attributes, following the lead of Django
+  and as per the HTML5 specification.
+
+- Replaced use of Django's procedural auth views with the corresponding
+  class-based views.
+
+- ``OrderPlacementMixin.get_message_context()`` is now passed a ``code`` argument
+  specifying the communication event type code for a message being sent.
+
+- We've dropped the dependency on Unidecode due to license incompatibilities,
+  ``izi.core.utils.default_slugifier`` now uses ``izi.core.utils.cautious_slugify``
+  to handle unicode characters in slugs when ``IZI_SLUG_ALLOW_UNICODE`` is ``False``.
+
+- ``IZI_SLUG_FUNCTION`` previously accepted a function as its value. It now
+  only accepts a dotted path to a function as its value. Such functions must
+  also now take a ``allow_unicode`` kwarg.
+
+- Fixed input validation for ``dashboard.offers.forms.BenefitForm`` when a ``range``
+  was specified but other fields were empty.
+
+- Fixed calculation of weight-based shipping charges in cases where the basket
+  weight is an exact multiple of a weight band's upper limit.
+
+- The ``sort_by`` field on ``catalogue.reviews.SortReviewsForm`` was made optional
+  and the logic in ``ProductReviewList`` adjusted so that the form fields
+  don't have to be rendered manually because of form errors.
+
+- Added a ``datetime_filters`` tag library that provides a ``timedelta`` template
+  filter for rendering time deltas in human readable format.
+
+- Fixed the logic of ``offers.Range.all_products()`` to make it consistent with
+  ``Range.contains_product()`` in excluding products specified in ``excluded_product_ids``.
+
+- Added a ``COMPARISON_FIELDS`` constant to ``catalogue.Category`` to restrict
+  which fields are fetched from the database when performing category comparison queries.
+
+.. _incompatible_in_2.0:
+
+Backwards incompatible changes in IZI 2.0
+-------------------------------------------
+
+- Redirection to the parent detail view for child products is disabled by default.
+  Child products now have their own detail view, which allows displaying their price
+  and images independently from the parent product. To revert to the previous behaviour
+  of redirecting to the parent product, set
+  ``izi.apps.catalogue.views.ProductDetailView.enforce_parent`` to ``False``.
+
+Dependency changes
+------------------
+
+.. _deprecated_features_in_2.0:
+
+Deprecated features
+~~~~~~~~~~~~~~~~~~~
+
+- ``offer.Range.contains()`` is deprecated. Use ``contains_product()`` instead.
+
+- ``catalogue.managers.ProductManager`` is deprecated.
+  Use ``catalogue.managers.ProductQuerySet.as_manager()`` instead.
+
+- ``catalogue.managers.BrowsableProductManager`` is deprecated.
+  Use ``Product.objects.browsable()`` instead.

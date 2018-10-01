@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[izi-core.izi]
+file_filter = src/izi/locale/<lang>/LC_MESSAGES/django.po
+source_file = src/izi/locale/en/LC_MESSAGES/django.po
+source_lang = en
+type = PO
+

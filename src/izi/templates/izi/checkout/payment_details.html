@@ -1,0 +1,31 @@
+{% extends "checkout/checkout.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Payment details" %} | {{ block.super }}
+{% endblock %}
+
+{% block checkout_nav %}
+    {% include 'checkout/nav.html' with step=3 %}
+{% endblock %}
+
+{% block checkout_title %}{% trans "Enter payment details" %}{% endblock %}
+
+{% block order_contents %}{% endblock %}
+{% block shipping_address %}{% endblock %}
+{% block shipping_method %}{% endblock %}
+{% block payment_method %}{% endblock %}
+
+{% block payment_details %}
+    {% block payment_details_content %}
+        <p>{% trans "This page needs implementing within your project.  You may want to use one of IZI's payment gateway libraries:" %}</p>
+        <ul>
+            <li><a href="https://github.com/izi-ecommerce/izi-core-paypal">izi-core-paypal</a></li>
+            <li><a href="https://github.com/izi-ecommerce/izi-core-datacash">izi-core-datacash</a></li>
+            <li><a href="https://github.com/izi-ecommerce/izi-core-gocardless">izi-core-gocardless</a></li>
+            <li><a href="https://github.com/izi-ecommerce/izi-core-paymentexpress">izi-core-paymentexpress</a></li>
+            <li><a href="https://github.com/izi-core/izi-accounts">izi-accounts</a></li>
+        </ul>
+        <a id="view_preview" href="{% url 'checkout:preview' %}" class="btn btn-primary btn-lg">{% trans "Continue" %}</a>
+    {% endblock payment_details_content %}
+{% endblock payment_details %}

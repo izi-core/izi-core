@@ -1,0 +1,207 @@
+from os.path import dirname
+import sys
+
+from django.test import override_settings, TestCase
+from django.conf import settings
+
+import izi
+from izi.core.loading import (
+    get_model, AppNotFoundError, get_classes, get_class, get_class_loader,
+    ClassNotFoundError)
+from tests import temporary_python_path
+from tests._site.loader import DummyClass
+
+
+class TestClassLoading(TestCase):
+    """
+    IZI's class loading utilities
+    """
+
+    def test_load_izi_classes_correctly(self):
+        Product, Category = get_classes('catalogue.models', ('Product', 'Category'))
+        self.assertEqual('izi.apps.catalogue.models', Product.__module__)
+        self.assertEqual('izi.apps.catalogue.models', Category.__module__)
+
+    def test_load_izi_class_correctly(self):
+        Product = get_class('catalogue.models', 'Product')
+        self.assertEqual('izi.apps.catalogue.models', Product.__module__)
+
+    def test_load_izi_class_from_dashboard_subapp(self):
+        ReportForm = get_class('dashboard.reports.forms', 'ReportForm')
+        self.assertEqual('izi.apps.dashboard.reports.forms', ReportForm.__module__)
+
+    def test_raise_exception_when_bad_appname_used(self):
+        with self.assertRaises(AppNotFoundError):
+            get_classes('fridge.models', ('Product', 'Category'))
+
+    def test_raise_exception_when_bad_classname_used(self):
+        with self.assertRaises(ClassNotFoundError):
+            get_class('catalogue.models', 'Monkey')
+
+    def test_raise_importerror_if_app_raises_importerror(self):
+        """
+        This tests that IZI doesn't fall back to using the IZI catalogue
+        app if the overriding app throws an ImportError.
+        """
+        apps = list(settings.INSTALLED_APPS)
+        apps[apps.index('tests._site.apps.catalogue')] = 'tests._site.import_error_app.catalogue'
+        with override_settings(INSTALLED_APPS=apps):
+            with self.assertRaises(ImportError):
+                get_class('catalogue.app', 'CatalogueApplication')
+
+
+class ClassLoadingWithLocalOverrideTests(TestCase):
+
+    def setUp(self):
+        self.installed_apps = list(settings.INSTALLED_APPS)
+        self.installed_apps[self.installed_apps.index('izi.apps.shipping')] = 'tests._site.shipping'
+
+    def test_loading_class_defined_in_local_module(self):
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            (Free,) = get_classes('shipping.methods', ('Free',))
+            self.assertEqual('tests._site.shipping.methods', Free.__module__)
+
+    def test_loading_class_which_is_not_defined_in_local_module(self):
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            (FixedPrice,) = get_classes('shipping.methods', ('FixedPrice',))
+            self.assertEqual('izi.apps.shipping.methods', FixedPrice.__module__)
+
+    def test_loading_class_from_module_not_defined_in_local_app(self):
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            (Repository,) = get_classes('shipping.repository', ('Repository',))
+            self.assertEqual('izi.apps.shipping.repository', Repository.__module__)
+
+    def test_loading_classes_defined_in_both_local_and_izi_modules(self):
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            (Free, FixedPrice) = get_classes('shipping.methods', ('Free', 'FixedPrice'))
+            self.assertEqual('tests._site.shipping.methods', Free.__module__)
+            self.assertEqual('izi.apps.shipping.methods', FixedPrice.__module__)
+
+    def test_loading_classes_with_root_app(self):
+        import tests._site.shipping
+        path = dirname(dirname(tests._site.shipping.__file__))
+        with temporary_python_path([path]):
+            self.installed_apps[
+                self.installed_apps.index('tests._site.shipping')] = 'shipping'
+            with override_settings(INSTALLED_APPS=self.installed_apps):
+                (Free,) = get_classes('shipping.methods', ('Free',))
+                self.assertEqual('shipping.methods', Free.__module__)
+
+    def test_overriding_view_is_possible_without_overriding_app(self):
+        from izi.apps.customer.app import application, CustomerApplication
+        # If test fails, it's helpful to know if it's caused by order of
+        # execution
+        self.assertEqual(CustomerApplication().summary_view.__module__,
+                         'tests._site.apps.customer.views')
+        self.assertEqual(application.summary_view.__module__,
+                         'tests._site.apps.customer.views')
+
+
+class ClassLoadingWithLocalOverrideWithMultipleSegmentsTests(TestCase):
+
+    def setUp(self):
+        self.installed_apps = list(settings.INSTALLED_APPS)
+        self.installed_apps[self.installed_apps.index('izi.apps.shipping')] = 'tests._site.apps.shipping'
+
+    def test_loading_class_defined_in_local_module(self):
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            (Free,) = get_classes('shipping.methods', ('Free',))
+            self.assertEqual('tests._site.apps.shipping.methods', Free.__module__)
+
+
+class TestGetCoreAppsFunction(TestCase):
+    """
+    izi.get_core_apps function
+    """
+
+    def test_returns_core_apps_when_no_overrides_specified(self):
+        apps = izi.get_core_apps()
+        self.assertEqual(izi.IZI_CORE_APPS, apps)
+
+    def test_uses_non_dashboard_override_when_specified(self):
+        apps = izi.get_core_apps(overrides=['apps.shipping'])
+        self.assertTrue('apps.shipping' in apps)
+        self.assertTrue('izi.apps.shipping' not in apps)
+
+    def test_uses_dashboard_override_when_specified(self):
+        apps = izi.get_core_apps(overrides=['apps.dashboard.catalogue'])
+        self.assertTrue('apps.dashboard.catalogue' in apps)
+        self.assertTrue('izi.apps.dashboard.catalogue' not in apps)
+        self.assertTrue('izi.apps.catalogue' in apps)
+
+
+class TestOverridingCoreApps(TestCase):
+
+    def test_means_the_overriding_model_is_registered_first(self):
+        klass = get_model('partner', 'StockRecord')
+        self.assertEqual(
+            'tests._site.apps.partner.models', klass.__module__)
+
+
+class TestAppLabelsForModels(TestCase):
+
+    def test_all_izi_models_have_app_labels(self):
+        from django.apps import apps
+        models = apps.get_models()
+        missing = []
+        for model in models:
+            # Ignore non-IZI models
+            if 'izi' not in repr(model):
+                continue
+            # Don't know how to get the actual model's Meta class. But if
+            # the parent doesn't have a Meta class, it's doesn't have an
+            # base in IZI anyway and is not intended to be overridden
+            abstract_model = model.__base__
+            meta_class = getattr(abstract_model, 'Meta', None)
+            if meta_class is None:
+                continue
+
+            if not hasattr(meta_class, 'app_label'):
+                missing.append(model)
+        if missing:
+            self.fail("Those models don't have an app_label set: %s" % missing)
+
+
+class TestDynamicLoadingOn3rdPartyApps(TestCase):
+
+    core_app_prefix = 'thirdparty_package.apps'
+
+    def setUp(self):
+        self.installed_apps = list(settings.INSTALLED_APPS)
+        sys.path.append('./tests/_site/')
+
+    def tearDown(self):
+        sys.path.remove('./tests/_site/')
+
+    def test_load_core_3rd_party_class_correctly(self):
+        self.installed_apps.append('thirdparty_package.apps.myapp')
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            Cow, Goat = get_classes('myapp.models', ('Cow', 'Goat'), self.core_app_prefix)
+            self.assertEqual('thirdparty_package.apps.myapp.models', Cow.__module__)
+            self.assertEqual('thirdparty_package.apps.myapp.models', Goat.__module__)
+
+    def test_load_overriden_3rd_party_class_correctly(self):
+        self.installed_apps.append('apps.myapp')
+        with override_settings(INSTALLED_APPS=self.installed_apps):
+            Cow, Goat = get_classes('myapp.models', ('Cow', 'Goat'), self.core_app_prefix)
+            self.assertEqual('thirdparty_package.apps.myapp.models', Cow.__module__)
+            self.assertEqual('apps.myapp.models', Goat.__module__)
+
+
+class OverriddenClassLoadingTestCase(TestCase):
+
+    def test_non_override_class_loader(self):
+        from izi.apps.catalogue.views import ProductDetailView
+        View = get_class('catalogue.views', 'ProductDetailView')
+        self.assertEqual(View, ProductDetailView)
+
+    @override_settings(IZI_DYNAMIC_CLASS_LOADER='tests._site.loader.custom_class_loader')
+    def test_override_class_loader(self):
+        # Clear lru cache for the class loader
+        get_class_loader.cache_clear()
+
+        View = get_class('catalogue.views', 'ProductDetailView')
+        self.assertEqual(View, DummyClass)
+
+        # Clear lru cache for the class loader again
+        get_class_loader.cache_clear()

@@ -1,0 +1,6 @@
+include *.rst
+include AUTHORS
+include LICENSE
+recursive-include src/izi/templates *.txt *.html
+recursive-include src/izi/static *
+recursive-include src/izi/locale *.po *.mo

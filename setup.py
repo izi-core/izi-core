@@ -74,7 +74,7 @@ setup(
     version=get_version().replace(' ', '-'),
     url='https://github.com/izi-ecommerce/izi-core',
     author="David Winterbottom",
-    author_email="david.winterbottom@gmail.com",
+    author_email="dotiendiep@gmail.com",
     description="A domain-driven e-commerce framework for Django",
     long_description=long_description,
     keywords="E-commerce, Django, domain-driven",

@@ -19,8 +19,8 @@ ALLOWED_HOSTS = [
 
 # This is needed for the hosted version of the sandbox
 ADMINS = (
-    ('David Winterbottom', 'david.winterbottom@gmail.com'),
-    ('Michael van Tellingen', 'michaelvantellingen@gmail.com'),
+    ('David Winterbottom', 'dotiendiep@gmail.com'),
+    ('Michael van Tellingen', 'vituocgia@gmail.com'),
 )
 EMAIL_SUBJECT_PREFIX = '[IZI sandbox] '
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -65,6 +65,7 @@ LANGUAGE_CODE = 'en-gb'
 # Taken from Django's default setting for LANGUAGES
 gettext_noop = lambda s: s
 LANGUAGES = (
+    ('vi', gettext_noop('Tiếng Việt')),
     ('ar', gettext_noop('Arabic')),
     ('ca', gettext_noop('Catalan')),
     ('cs', gettext_noop('Czech')),

@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-01 11:38+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\sandbox\settings.py:68
+msgid "Tiếng Việt"
+msgstr ""
+
+#: .\sandbox\settings.py:69
+msgid "Arabic"
+msgstr ""
+
+#: .\sandbox\settings.py:70
+msgid "Catalan"
+msgstr ""
+
+#: .\sandbox\settings.py:71
+msgid "Czech"
+msgstr ""
+
+#: .\sandbox\settings.py:72
+msgid "Danish"
+msgstr ""
+
+#: .\sandbox\settings.py:73
+msgid "German"
+msgstr ""
+
+#: .\sandbox\settings.py:74
+msgid "British English"
+msgstr ""
+
+#: .\sandbox\settings.py:75
+msgid "Greek"
+msgstr ""
+
+#: .\sandbox\settings.py:76
+msgid "Spanish"
+msgstr ""
+
+#: .\sandbox\settings.py:77
+msgid "Finnish"
+msgstr ""
+
+#: .\sandbox\settings.py:78
+msgid "French"
+msgstr ""
+
+#: .\sandbox\settings.py:79
+msgid "Italian"
+msgstr ""
+
+#: .\sandbox\settings.py:80
+msgid "Korean"
+msgstr ""
+
+#: .\sandbox\settings.py:81
+msgid "Dutch"
+msgstr ""
+
+#: .\sandbox\settings.py:82
+msgid "Polish"
+msgstr ""
+
+#: .\sandbox\settings.py:83
+msgid "Portuguese"
+msgstr ""
+
+#: .\sandbox\settings.py:84
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: .\sandbox\settings.py:85
+msgid "Romanian"
+msgstr ""
+
+#: .\sandbox\settings.py:86
+msgid "Russian"
+msgstr ""
+
+#: .\sandbox\settings.py:87
+msgid "Slovak"
+msgstr ""
+
+#: .\sandbox\settings.py:88
+msgid "Ukrainian"
+msgstr ""
+
+#: .\sandbox\settings.py:89
+msgid "Simplified Chinese"
+msgstr ""
+
+#: .\sandbox\templates\gateway\email.txt:2
+#, python-format
+msgid ""
+"\n"
+"A dashboard user has been created for you with credentials:\n"
+"\n"
+"- Email: %(email)s\n"
+"- Password: %(password)s\n"
+"\n"
+"Sign into the dashboard here:\n"
+"http://latest.ecommerce.izi.asia/dashboard/\n"
+"\n"
+"Feel free to play around with the dashboard, although please don't deface "
+"the\n"
+"public-facing pages.\n"
+"\n"
+"Best wishes,\n"
+"IZI Team\n"
+msgstr ""
+
+#: .\sandbox\templates\gateway\form.html:5
+#: .\sandbox\templates\gateway\form.html:14
+msgid "Dashboard access"
+msgstr ""
+
+#: .\sandbox\templates\gateway\form.html:11
+msgid "Home"
+msgstr ""
+
+#: .\sandbox\templates\gateway\form.html:20
+msgid ""
+"Let us know your email address and we'll create a dashboard user for you and "
+"email you the details."
+msgstr ""
+
+#: .\sandbox\templates\gateway\form.html:23
+msgid "Sending..."
+msgstr ""
+
+#: .\sandbox\templates\gateway\form.html:23
+msgid "Send email"
+msgstr ""
+
+#: .\tests\_site\myauth\models.py:45
+msgid "username"
+msgstr ""
+
+#: .\tests\_site\myauth\models.py:46
+msgid ""
+"Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
+msgstr ""
+
+#: .\tests\_site\myauth\models.py:49
+msgid "Enter a valid username."
+msgstr ""
+
+#: .\tests\_site\myauth\models.py:52
+msgid "Nobody needs me"
+msgstr ""
+
+#: .\tests\_site\templates\base.html:5
+msgid "IZI Test Shop"
+msgstr ""
+
+#: .\tests\_site\templates\checkout\payment_details.html:9
+msgid "PayTest"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:13
+msgid "IZI // Flexible e-commerce for Django"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:17
+msgid "Go!"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:21
+msgid "Profile"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:22
+msgid "Logout"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:24
+msgid "Login"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:27
+#, python-format
+msgid "Basket total: %(total)s"
+msgstr ""
+
+#: .\tests\_site\templates\layout.html:28
+msgid "View basket"
+msgstr ""
+
+#: .\tests\functional\catalogue\test_catalogue.py:56
+msgid "Add to basket"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:301
+msgid "Add a new Attribute Option Group"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:324
+msgid "Attribute Option Group created successfully"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:344
+#, python-format
+msgid "Update Attribute Option Group '%s'"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:370
+msgid "Attribute Option Group updated successfully"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:388
+#, python-format
+msgid "Delete Attribute Option Group '%s'"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:391
+#, python-format
+msgid "Unable to delete '%s'"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:392
+msgid "1 product attributes are still assigned to this attribute option group"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_catalogue.py:418
+msgid "Attribute Option Group deleted successfully"
+msgstr ""
+
+#: .\tests\functional\dashboard\test_user.py:100
+msgid "A password reset email has been sent"
+msgstr ""
+
+#: .\tests\functional\test_basket.py:118
+#, python-format
+msgid ""
+"Due to technical limitations we are not able to ship more than %(threshold)d "
+"items in one order. Your basket currently has %(basket)d items."
+msgstr ""
+
+#: .\tests\integration\offer\test_custom_range.py:20
+msgid "Custom range with gettext_lazy"
+msgstr ""
+
+#: .\tests\integration\order\test_models.py:378
+#: .\tests\integration\order\test_models.py:382
+#: .\tests\integration\order\test_models.py:386
+msgid "In progress"
+msgstr ""
+
+#: .\tests\integration\order\test_models.py:390
+msgid "Shipped"
+msgstr ""
+
+#: .\tests\integration\order\test_models.py:394
+msgid "Returned"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:43
+msgid "Type"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:44
+msgid "Rating"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:45
+msgid "Category"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:50
+msgid "Price range"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:53
+msgid "0 to 20"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:54
+msgid "20 to 40"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:55
+msgid "40 to 60"
+msgstr ""
+
+#: .\tests\integration\search\test_munger.py:56
+msgid "60+"
+msgstr ""

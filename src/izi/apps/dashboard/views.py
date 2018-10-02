@@ -19,6 +19,8 @@ Basket = get_model('basket', 'Basket')
 StockAlert = get_model('partner', 'StockAlert')
 Product = get_model('catalogue', 'Product')
 Order = get_model('order', 'Order')
+# Import model to get order of partner
+Partner = get_model('partner', 'Partner')
 Line = get_model('order', 'Line')
 User = get_user_model()
 
@@ -143,8 +145,18 @@ class IndexView(TemplateView):
 
     def get_stats(self):
         datetime_24hrs_ago = now() - timedelta(hours=24)
+        # Sample - apply change to dashboard stats for partner who have limited access
+        if not self.request.user.is_superuser:
+            partners = Partner.objects.filter(users=self.request.user)
+            orders = Order.objects.select_related(
+                'billing_address', 'billing_address__country',
+                'shipping_address', 'shipping_address__country',
+                'user'
+            ).prefetch_related('lines').filter(lines__partner__in=partners).distinct()
 
-        orders = Order.objects.all()
+        else:
+            orders = Order.objects.all()
+
         orders_last_day = orders.filter(date_placed__gt=datetime_24hrs_ago)
 
         open_alerts = StockAlert.objects.filter(status=StockAlert.OPEN)

@@ -650,6 +650,7 @@ class OrderDetailView(DetailView):
 
         msgs = []
         for line in lines:
+            # Update check line owner_id update status
             if request.user.id == line.partner_id or request.user.is_superuser:
                 msg = _("Status of line #%(line_id)d changed from '%(old_status)s'"
                         " to '%(new_status)s'") % {'line_id': line.id,

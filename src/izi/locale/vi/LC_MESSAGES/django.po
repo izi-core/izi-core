@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: izi-core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-01 11:38+0700\n"
-"PO-Revision-Date: 2018-04-11 08:36+0000\n"
+"PO-Revision-Date: 2018-10-02 15:56+0700\n"
 "Last-Translator: IZI Bot <bot@izi.asia>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/izi-global/izi-core/"
 "language/vi/)\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: .\src\izi\apps\address\abstract_models.py:24
 msgid "Mr"
@@ -139,16 +140,16 @@ msgstr "Tên quốc gia"
 
 #: .\src\izi\apps\address\abstract_models.py:418
 msgid "Official name"
-msgstr "Văn phòng"
+msgstr "Tên chính thức"
 
 #: .\src\izi\apps\address\abstract_models.py:421
 #: .\src\izi\apps\catalogue\abstract_models.py:1167
 msgid "Display order"
-msgstr "Tên hiển thị "
+msgstr "Thứ tự hiển thị"
 
 #: .\src\izi\apps\address\abstract_models.py:422
 msgid "Higher the number, higher the country in the list."
-msgstr "Số càng lớn, thể hiện các nước lớn trên danh sách"
+msgstr "Số càng lớn, thể hiện các nước lớn trên danh sách."
 
 #: .\src\izi\apps\address\abstract_models.py:425
 msgid "Is shipping country"
@@ -176,7 +177,7 @@ msgstr "Hướng dẫn"
 
 #: .\src\izi\apps\address\abstract_models.py:478
 msgid "Tell us anything we should know when delivering your order."
-msgstr "Cho chúng tôi biết về những lưu ý khi giao hàng cho bạn "
+msgstr "Cho chúng tôi biết về những lưu ý khi giao hàng cho bạn."
 
 #: .\src\izi\apps\address\abstract_models.py:485
 #: .\src\izi\templates\izi\checkout\shipping_address.html:5
@@ -245,7 +246,7 @@ msgstr "Địa chỉ"
 #: .\src\izi\apps\promotions\models.py:26
 #: .\src\izi\apps\promotions\models.py:350
 msgid "Date Created"
-msgstr "Ngày tạo "
+msgstr "Ngày tạo"
 
 #: .\src\izi\apps\address\abstract_models.py:566
 msgid "User address"
@@ -413,7 +414,7 @@ msgstr "%(user)s xem '%(product)s'"
 
 #: .\src\izi\apps\analytics\abstract_models.py:103
 msgid "Search term"
-msgstr "Giới hạn tìm kiếm "
+msgstr "Giới hạn tìm kiếm"
 
 #: .\src\izi\apps\analytics\abstract_models.py:109
 msgid "User search query"
@@ -421,7 +422,7 @@ msgstr "Dữ liệu người dùng tìm kiếm"
 
 #: .\src\izi\apps\analytics\abstract_models.py:110
 msgid "User search queries"
-msgstr "Những yêu cầu tìm kiếm của người "
+msgstr "Những yêu cầu tìm kiếm của người"
 
 #: .\src\izi\apps\analytics\abstract_models.py:113
 #, python-format
@@ -430,18 +431,18 @@ msgstr "%(user)s tìm kiếm  '%(query)s'"
 
 #: .\src\izi\apps\analytics\config.py:8
 msgid "Analytics"
-msgstr "Thống kê "
+msgstr "Thống kê"
 
 #: .\src\izi\apps\analytics\reports.py:21
 #: .\src\izi\apps\analytics\reports.py:64
 #: .\src\izi\templates\izi\dashboard\reports\partials\product_report.html:10
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:12
 msgid "Basket additions"
-msgstr "Thêm vào giỏ hàng "
+msgstr "Thêm vào giỏ hàng"
 
 #: .\src\izi\apps\analytics\reports.py:39
 msgid "Product analytics"
-msgstr "Phân tích sản phẩm "
+msgstr "Phân tích sản phẩm"
 
 #: .\src\izi\apps\analytics\reports.py:61 .\src\izi\apps\basket\reports.py:20
 #: .\src\izi\apps\catalogue\abstract_models.py:46
@@ -500,28 +501,28 @@ msgstr "Tên"
 #: .\src\izi\templates\izi\customer\profile\profile.html:25
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:10
 msgid "Date registered"
-msgstr "Ngày đăng ký "
+msgstr "Ngày đăng ký"
 
 #: .\src\izi\apps\analytics\reports.py:63
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:11
 msgid "Product views"
-msgstr "Lượt xem sản phẩm "
+msgstr "Lượt xem sản phẩm"
 
 #: .\src\izi\apps\analytics\reports.py:66
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:14
 msgid "Order lines"
-msgstr "Lượt đặt hàng "
+msgstr "Lượt đặt hàng"
 
 #: .\src\izi\apps\analytics\reports.py:67
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:15
 msgid "Order items"
-msgstr "Sản phẩm đặt hàng "
+msgstr "Sản phẩm đặt hàng"
 
 #: .\src\izi\apps\analytics\reports.py:68
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:16
 #: .\src\izi\templates\izi\dashboard\users\detail.html:76
 msgid "Total spent"
-msgstr "Tổng thanh toán "
+msgstr "Tổng thanh toán"
 
 #: .\src\izi\apps\analytics\reports.py:69
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:17
@@ -539,15 +540,15 @@ msgstr "Chủ sở hữu"
 
 #: .\src\izi\apps\basket\abstract_models.py:43
 msgid "Open - currently active"
-msgstr "Hiện đang hoạt "
+msgstr "Hiện đang hoạt"
 
 #: .\src\izi\apps\basket\abstract_models.py:44
 msgid "Merged - superceded by another basket"
-msgstr "Sáp nhập- Trộn tất cả các giỏ hàng"
+msgstr "Đã gộp - Trộn tất cả các giỏ hàng"
 
 #: .\src\izi\apps\basket\abstract_models.py:45
 msgid "Saved - for items to be purchased later"
-msgstr "Lưu những món hàng để mua "
+msgstr "Lưu những món hàng để mua"
 
 #: .\src\izi\apps\basket\abstract_models.py:46
 msgid "Frozen - the basket cannot be modified"
@@ -555,7 +556,7 @@ msgstr "Khóa lại - Giỏ hàng không thể thay đổi"
 
 #: .\src\izi\apps\basket\abstract_models.py:47
 msgid "Submitted - has been ordered at the checkout"
-msgstr "Gửi đơn hàng khi thanh toán."
+msgstr "Gửi đơn hàng khi thanh toán"
 
 #: .\src\izi\apps\basket\abstract_models.py:50
 #: .\src\izi\apps\catalogue\abstract_models.py:1092
@@ -591,7 +592,7 @@ msgstr "Gửi đơn hàng khi thanh toán."
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_detail.html:86
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_list.html:37
 msgid "Status"
-msgstr "Trạng thái "
+msgstr "Trạng thái"
 
 #: .\src\izi\apps\basket\abstract_models.py:56
 #: .\src\izi\apps\dashboard\vouchers\views.py:80
@@ -633,7 +634,7 @@ msgstr "Ngày tạo"
 
 #: .\src\izi\apps\basket\abstract_models.py:59
 msgid "Date merged"
-msgstr "Ngày sửa"
+msgstr "Ngày gộp"
 
 #: .\src\izi\apps\basket\abstract_models.py:60
 #: .\src\izi\templates\izi\customer\order\order_list.html:42
@@ -655,7 +656,7 @@ msgstr "Giỏ hàng"
 
 #: .\src\izi\apps\basket\abstract_models.py:70
 msgid "Baskets"
-msgstr "Những giỏ hàng"
+msgstr "Các giỏ hàng"
 
 #: .\src\izi\apps\basket\abstract_models.py:89
 #, python-format
@@ -713,11 +714,11 @@ msgstr "Giá bao gồm thuế"
 
 #: .\src\izi\apps\basket\abstract_models.py:663
 msgid "Basket line"
-msgstr "Giỏ hàng dây "
+msgstr "Giỏ hàng dây"
 
 #: .\src\izi\apps\basket\abstract_models.py:664
 msgid "Basket lines"
-msgstr "Những giỏ hàng "
+msgstr "Những giỏ hàng"
 
 #: .\src\izi\apps\basket\abstract_models.py:668
 #, python-format
@@ -728,7 +729,7 @@ msgstr ""
 #: .\src\izi\apps\basket\abstract_models.py:676
 #, python-format
 msgid "You cannot modify a %s basket"
-msgstr "Bạn không thể thay đổi %s giỏ hàng "
+msgstr "Bạn không thể thay đổi %s giỏ hàng"
 
 #: .\src\izi\apps\basket\abstract_models.py:905
 #, python-format
@@ -737,7 +738,7 @@ msgid ""
 "since you added it to your basket"
 msgstr ""
 "Giá của  '%(product)s' đã tăng từ %(old_price)s đến %(new_price)s kể từ khi "
-"bạn thêm nó vào giỏ hàng của bạn "
+"bạn thêm nó vào giỏ hàng của bạn"
 
 #: .\src\izi\apps\basket\abstract_models.py:910
 #, python-format
@@ -746,7 +747,7 @@ msgid ""
 "since you added it to your basket"
 msgstr ""
 "Giá của  '%(product)s' đã giảm  từ %(old_price)s đến %(new_price)s kể từ khi "
-"bạn thêm nó vào giỏ hàng của bạn "
+"bạn thêm nó vào giỏ hàng của bạn"
 
 #: .\src\izi\apps\basket\abstract_models.py:924
 #: .\src\izi\apps\order\abstract_models.py:806
@@ -754,7 +755,7 @@ msgstr ""
 #: .\src\izi\apps\order\abstract_models.py:953
 #: .\src\izi\apps\order\abstract_models.py:1021
 msgid "Line"
-msgstr "dây "
+msgstr "Dòng"
 
 #: .\src\izi\apps\basket\abstract_models.py:928
 #: .\src\izi\apps\catalogue\abstract_models.py:720
@@ -764,30 +765,30 @@ msgstr "dây "
 #: .\src\izi\apps\order\abstract_models.py:835
 #: .\src\izi\templates\izi\dashboard\catalogue\attribute_option_group_form.html:112
 msgid "Option"
-msgstr "Lựa chọn "
+msgstr "Lựa chọn"
 
 #: .\src\izi\apps\basket\abstract_models.py:929
 #: .\src\izi\apps\offer\abstract_models.py:480
 #: .\src\izi\apps\offer\abstract_models.py:694
 #: .\src\izi\apps\order\abstract_models.py:811
 msgid "Value"
-msgstr "Giá trị "
+msgstr "Giá trị"
 
 #: .\src\izi\apps\basket\abstract_models.py:934
 msgid "Line attribute"
-msgstr "Thuộc tính dây "
+msgstr "Thuộc tính dây"
 
 #: .\src\izi\apps\basket\abstract_models.py:935
 msgid "Line attributes"
-msgstr "Những thuộc tính dây "
+msgstr "Những thuộc tính dây"
 
 #: .\src\izi\apps\basket\forms.py:16
 msgid "Save for Later"
-msgstr "Lưu lại cho lần sau "
+msgstr "Lưu lại cho lần sau"
 
 #: .\src\izi\apps\basket\forms.py:64
 msgid "Move to Basket"
-msgstr "Di chuyển đến giỏ hàng "
+msgstr "Di chuyển đến giỏ hàng"
 
 #: .\src\izi\apps\basket\forms.py:96
 #: .\src\izi\apps\catalogue\abstract_models.py:689
@@ -809,15 +810,15 @@ msgstr "Di chuyển đến giỏ hàng "
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_list.html:53
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_detail.html:85
 msgid "Code"
-msgstr "Mã "
+msgstr "Mã"
 
 #: .\src\izi\apps\basket\forms.py:151
 msgid "Variant"
-msgstr "Dạng khác "
+msgstr "Dạng khác"
 
 #: .\src\izi\apps\basket\forms.py:179
 msgid "Please select a valid product"
-msgstr "Vui lòng chọn sản phẩm hợp lệ "
+msgstr "Vui lòng chọn sản phẩm hợp lệ"
 
 #: .\src\izi\apps\basket\forms.py:196
 #, python-format
@@ -829,16 +830,12 @@ msgstr ""
 "trong một đơn hàng. Giỏ hàng của bạn hiện có%(basket)d mục."
 
 #: .\src\izi\apps\basket\forms.py:218
-#, fuzzy
-#| msgid ""
-#| "This product cannot be added to the basket as its currency isn't the same "
-#| "as other products in your basket"
 msgid ""
 "This product cannot be added to the basket because a price could not be "
 "determined for it."
 msgstr ""
 "Sản phẩm này không thể thêm vào giỏ hàng vì loại tiền tệ  không giống như "
-"các sản phẩm khác trong giỏ hàng của bạn"
+"các sản phẩm khác trong giỏ hàng của bạn."
 
 #: .\src\izi\apps\basket\forms.py:225
 msgid ""
@@ -858,7 +855,7 @@ msgstr ""
 
 #: .\src\izi\apps\basket\reports.py:19 .\src\izi\apps\basket\reports.py:78
 msgid "User ID"
-msgstr "ID của bạn "
+msgstr "ID của bạn"
 
 #: .\src\izi\apps\basket\reports.py:21
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:50
@@ -880,17 +877,17 @@ msgstr "ID của bạn "
 #: .\src\izi\templates\izi\dashboard\reports\partials\user_report.html:8
 #: .\src\izi\templates\izi\dashboard\users\detail.html:36
 msgid "Email"
-msgstr "Email "
+msgstr "Email"
 
 #: .\src\izi\apps\basket\reports.py:22 .\src\izi\apps\basket\reports.py:80
 msgid "Basket status"
-msgstr "Trạng thái giỏ hàng "
+msgstr "Trạng thái giỏ hàng"
 
 #: .\src\izi\apps\basket\reports.py:23 .\src\izi\apps\basket\reports.py:81
 #: .\src\izi\templates\izi\dashboard\reports\partials\open_basket_report.html:11
 #: .\src\izi\templates\izi\dashboard\reports\partials\submitted_basket_report.html:10
 msgid "Num lines"
-msgstr "Số dây "
+msgstr "Số dây"
 
 #: .\src\izi\apps\basket\reports.py:24 .\src\izi\apps\basket\reports.py:82
 #: .\src\izi\templates\izi\customer\order\order_list.html:40
@@ -898,34 +895,34 @@ msgstr "Số dây "
 #: .\src\izi\templates\izi\dashboard\reports\partials\submitted_basket_report.html:11
 #: .\src\izi\templates\izi\dashboard\users\detail.html:120
 msgid "Num items"
-msgstr "Số sản phẩm "
+msgstr "Số sản phẩm"
 
 #: .\src\izi\apps\basket\reports.py:25
 #: .\src\izi\templates\izi\dashboard\reports\partials\open_basket_report.html:13
 msgid "Date of creation"
-msgstr "Ngày tạo "
+msgstr "Ngày tạo"
 
 #: .\src\izi\apps\basket\reports.py:26
 #: .\src\izi\templates\izi\dashboard\reports\partials\open_basket_report.html:14
 msgid "Time since creation"
-msgstr "Thời gian kể từ khi tạo "
+msgstr "Thời gian kể từ khi tạo"
 
 #: .\src\izi\apps\basket\reports.py:58
 msgid "Open baskets"
-msgstr "Mở giỏ hàng "
+msgstr "Mở giỏ hàng"
 
 #: .\src\izi\apps\basket\reports.py:84
 #: .\src\izi\templates\izi\dashboard\reports\partials\submitted_basket_report.html:13
 msgid "Time between creation and submission"
-msgstr "Thời gian từ khi tạo đến khi gửi "
+msgstr "Thời gian từ khi tạo đến khi gửi"
 
 #: .\src\izi\apps\basket\reports.py:113
 msgid "Submitted baskets"
-msgstr "Gửi giỏ hàng "
+msgstr "Gửi giỏ hàng"
 
 #: .\src\izi\apps\basket\views.py:167
 msgid "You can't save an item for later if you're not logged in!"
-msgstr "Bạn không thể lưu sản phẩm cho lần sau vì bạn chưa đăng nhập "
+msgstr "Bạn không thể lưu sản phẩm cho lần sau vì bạn chưa đăng nhập!"
 
 #: .\src\izi\apps\basket\views.py:230
 msgid ""
@@ -937,36 +934,36 @@ msgstr ""
 #: .\src\izi\apps\basket\views.py:318
 #, python-format
 msgid "The '%(code)s' voucher has expired"
-msgstr "Ma '%(code)s' của phiếu giảm giá đã hết hạn. "
+msgstr "Ma '%(code)s' của phiếu giảm giá đã hết hạn"
 
 #: .\src\izi\apps\basket\views.py:325
 #, python-format
 msgid "The '%(code)s' voucher is not active"
-msgstr "Mã '%(code)s' của phiếu giảm giá chưa được kích hoạt. "
+msgstr "Mã '%(code)s' của phiếu giảm giá chưa được kích hoạt"
 
 #: .\src\izi\apps\basket\views.py:354
 msgid "Your basket does not qualify for a voucher discount"
-msgstr "Giỏ hàng của bạn chưa đủ số lượng cho phiếu giảm giá ."
+msgstr "Giỏ hàng của bạn chưa đủ số lượng cho phiếu giảm giá"
 
 #: .\src\izi\apps\basket\views.py:359
 #, python-format
 msgid "Voucher '%(code)s' added to basket"
-msgstr "Mã '%(code)s' phiếu giảm giá đã thêm vào giỏ  hàng ."
+msgstr "Mã '%(code)s' phiếu giảm giá đã thêm vào giỏ  hàng"
 
 #: .\src\izi\apps\basket\views.py:369
 #, python-format
 msgid "You have already added the '%(code)s' voucher to your basket"
-msgstr "Bạn đã thêm mã '%(code)s'  của phiếu giảm giá vào giỏ hàng ."
+msgstr "Bạn đã thêm mã '%(code)s'  của phiếu giảm giá vào giỏ hàng"
 
 #: .\src\izi\apps\basket\views.py:377
 #, python-format
 msgid "No voucher found with code '%(code)s'"
-msgstr "Không tìm thấy phiếu giảm giá với mã '%(code)s' "
+msgstr "Không tìm thấy phiếu giảm giá với mã '%(code)s'"
 
 #: .\src\izi\apps\basket\views.py:384
 #: .\src\izi\apps\dashboard\vouchers\forms.py:73
 msgid "Please enter a voucher code"
-msgstr "Bạn vui lòng nhập mã của phiếu giảm giá ."
+msgstr "Bạn vui lòng nhập mã của phiếu giảm giá"
 
 #: .\src\izi\apps\basket\views.py:405
 #, python-format
@@ -985,11 +982,11 @@ msgstr "Phiếu giảm giá '%s' bị bỏ ra khỏi giỏ hàng"
 #: .\src\izi\apps\offer\abstract_models.py:776
 #: .\src\izi\apps\shipping\abstract_models.py:18
 msgid "Slug"
-msgstr "Tiêu đề "
+msgstr "Tiêu đề"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:52
 msgid "Requires shipping?"
-msgstr "Yêu cầu giao hàng ? "
+msgstr "Yêu cầu giao hàng ?"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:57
 msgid "Track stock levels?"
@@ -998,16 +995,16 @@ msgstr "Kiểm tra mức độ tồn kho ?"
 #: .\src\izi\apps\catalogue\abstract_models.py:64
 #: .\src\izi\apps\catalogue\abstract_models.py:1099
 msgid "Options"
-msgstr "Lựa chọn "
+msgstr "Lựa chọn"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:70
 #: .\src\izi\apps\catalogue\abstract_models.py:532
 msgid "Product class"
-msgstr "Dòng sản phẩm "
+msgstr "Dòng sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:71
 msgid "Product classes"
-msgstr "Những dòng sản phẩm "
+msgstr "Những dòng sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:94
 #: .\src\izi\apps\catalogue\abstract_models.py:277
@@ -1021,7 +1018,7 @@ msgstr "Những dòng sản phẩm "
 #: .\src\izi\templates\izi\dashboard\shipping\weight_based_detail.html:35
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_detail.html:54
 msgid "Description"
-msgstr "Mô tả chi tiết "
+msgstr "Mô tả chi tiết"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:95
 #: .\src\izi\apps\catalogue\abstract_models.py:724
@@ -1030,7 +1027,7 @@ msgstr "Mô tả chi tiết "
 #: .\src\izi\apps\promotions\models.py:185
 #: .\src\izi\apps\promotions\models.py:186
 msgid "Image"
-msgstr "Hình ảnh "
+msgstr "Hình ảnh"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:194
 #: .\src\izi\apps\catalogue\abstract_models.py:215
@@ -1038,7 +1035,7 @@ msgstr "Hình ảnh "
 #: .\src\izi\templates\izi\dashboard\catalogue\product_update.html:123
 #: .\src\izi\templates\izi\dashboard\comms\list.html:33
 msgid "Category"
-msgstr "Danh mục "
+msgstr "Danh mục"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:195
 #: .\src\izi\apps\catalogue\abstract_models.py:320
@@ -1055,28 +1052,28 @@ msgstr "Phân loại"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:222
 msgid "Product category"
-msgstr "Danh mục hàng hóa "
+msgstr "Danh mục hàng hóa"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:223
 msgid "Product categories"
-msgstr "Những danh mục hàng hóa "
+msgstr "Các danh mục thuộc cho sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:246
 msgid "Stand-alone product"
-msgstr "Sản phẩm riêng lẻ "
+msgstr "Sản phẩm riêng lẻ"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:247
 #: .\src\izi\apps\catalogue\abstract_models.py:266
 msgid "Parent product"
-msgstr "Sản phẩm trước "
+msgstr "Sản phẩm chính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:248
 msgid "Child product"
-msgstr "Sản phẩm sau "
+msgstr "Sản phẩm con"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:251
 msgid "Product structure"
-msgstr "Cấu trúc sản phẩm "
+msgstr "Cấu trúc sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:255
 #: .\src\izi\apps\dashboard\catalogue\forms.py:50
@@ -1095,7 +1092,7 @@ msgid ""
 "specific to a particular  supplier. Eg an ISBN for a book."
 msgstr ""
 "Mã vạch sản phẩm (UPC) là một định danh cho một sản phẩm mà không phải là cụ "
-"thể cho một nhà cung cấp cụ thể. Ví dụ: mã vạch cho một cuốn sách. "
+"thể cho một nhà cung cấp cụ thể. Ví dụ: mã vạch cho một cuốn sách."
 
 #: .\src\izi\apps\catalogue\abstract_models.py:267
 msgid ""
@@ -1122,7 +1119,7 @@ msgstr "Tiêu đề"
 #: .\src\izi\apps\dashboard\catalogue\tables.py:25
 #: .\src\izi\templates\izi\dashboard\catalogue\product_class_delete.html:12
 msgid "Product type"
-msgstr "Kiểu sản phẩm "
+msgstr "Loại sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:287
 msgid "Choose what type of product this is"
@@ -1133,7 +1130,7 @@ msgstr "Chọn loại sản phẩm này là"
 #: .\src\izi\templates\izi\dashboard\catalogue\product_update.html:143
 #: .\src\izi\templates\izi\dashboard\catalogue\product_update.html:254
 msgid "Attributes"
-msgstr "Thuộc tính "
+msgstr "Các thuộc tính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:292
 msgid ""
@@ -1141,11 +1138,11 @@ msgid ""
 "as specified by its class"
 msgstr ""
 "Một thuộc tính của sản phẩm là điều mà sản phẩm này có thể có, chẳng hạn như "
-"kích thước, màu sắc..."
+"kích thước, màu sắc.vv"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:296
 msgid "Product options"
-msgstr "Lựa chọn sản phẩm "
+msgstr "Lựa chọn sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:297
 msgid ""
@@ -1160,7 +1157,7 @@ msgstr ""
 #: .\src\izi\apps\catalogue\abstract_models.py:304
 #: .\src\izi\templates\izi\dashboard\catalogue\product_update.html:299
 msgid "Recommended products"
-msgstr "Sản phẩm đề xuất "
+msgstr "Sản phẩm đề xuất"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:305
 msgid "These are products that are recommended to accompany the main product."
@@ -1168,22 +1165,22 @@ msgstr "Đây là những sản phẩm được đề nghị để đi cùng v�
 
 #: .\src\izi\apps\catalogue\abstract_models.py:310 .\src\izi\defaults.py:225
 msgid "Rating"
-msgstr "Xếp hạng "
+msgstr "Xếp hạng"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:316
 #: .\src\izi\apps\partner\abstract_models.py:149
 msgid "Date updated"
-msgstr "Ngày cập nhật "
+msgstr "Ngày cập nhật"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:328
 msgid "Is discountable?"
-msgstr "Là sản phẩm giảm giá ? "
+msgstr "Là sản phẩm giảm giá ?"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:329
 msgid "This flag indicates if this product can be used in an offer or not"
 msgstr ""
 "Đánh dấu  này cho biết sản phẩm này có thể được sử dụng trong một đề xuất "
-"hay không ? "
+"hay không"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:342
 #: .\src\izi\apps\dashboard\catalogue\views.py:100
@@ -1205,15 +1202,15 @@ msgstr "Sản phẩm của bạn cần một tiêu đề ."
 
 #: .\src\izi\apps\catalogue\abstract_models.py:401
 msgid "Your product must have a product class."
-msgstr "Sản phẩm của bạn cần một danh mục sản phẩm "
+msgstr "Sản phẩm của bạn cần một danh mục sản phẩm."
 
 #: .\src\izi\apps\catalogue\abstract_models.py:403
 msgid "Only child products can have a parent."
-msgstr "Chỉ sản phẩm con có sản phẩm cha "
+msgstr "Chỉ sản phẩm con có sản phẩm cha."
 
 #: .\src\izi\apps\catalogue\abstract_models.py:410
 msgid "A child product needs a parent."
-msgstr "Một sản phẩm con cần sản phẩm cha "
+msgstr "Một sản phẩm con cần sản phẩm cha."
 
 #: .\src\izi\apps\catalogue\abstract_models.py:413
 msgid "You can only assign child products to parent products."
@@ -1247,15 +1244,15 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:656
 msgid "Primary product"
-msgstr "Sản phẩm chính "
+msgstr "Sản phẩm chính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:660
 msgid "Recommended product"
-msgstr "Sản phẩm đề nghị "
+msgstr "Sản phẩm đề nghị"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:662
 msgid "Ranking"
-msgstr "Xếp hạng "
+msgstr "Xếp hạng"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:663
 msgid ""
@@ -1267,11 +1264,11 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:671
 msgid "Product recommendation"
-msgstr "Sản phẩm đề nghị "
+msgstr "Sản phẩm đề nghị"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:672
 msgid "Product recomendations"
-msgstr "Những sản phẩm đề nghị "
+msgstr "Những sản phẩm đề nghị"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:694
 #: .\src\izi\apps\customer\abstract_models.py:155
@@ -1285,25 +1282,25 @@ msgstr ""
 #: .\src\izi\apps\catalogue\abstract_models.py:713
 #: .\src\izi\apps\catalogue\abstract_models.py:909
 msgid "Text"
-msgstr "Chữ "
+msgstr "Chữ"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:714
 #: .\src\izi\apps\catalogue\abstract_models.py:910
 msgid "Integer"
-msgstr "Số "
+msgstr "Số"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:715
 msgid "True / False"
-msgstr "Đúng / Sai "
+msgstr "Đúng / Sai"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:716
 #: .\src\izi\apps\catalogue\abstract_models.py:912
 msgid "Float"
-msgstr "Số nguyên "
+msgstr "Số nguyên"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:717
 msgid "Rich Text"
-msgstr "Nhiều chữ "
+msgstr "Nhiều chữ"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:718
 #: .\src\izi\apps\catalogue\abstract_models.py:914
@@ -1315,7 +1312,7 @@ msgstr "Nhiều chữ "
 #: .\src\izi\templates\izi\dashboard\orders\order_detail.html:529
 #: .\src\izi\templates\izi\dashboard\orders\order_detail.html:609
 msgid "Date"
-msgstr "Ngày "
+msgstr "Ngày"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:719
 msgid "Datetime"
@@ -1327,11 +1324,11 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:722
 msgid "Entity"
-msgstr "Chủ thể "
+msgstr "Chủ thể"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:723
 msgid "File"
-msgstr "Thư mục "
+msgstr "Thư mục"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:728
 #: .\src\izi\apps\offer\abstract_models.py:116
@@ -1345,11 +1342,11 @@ msgstr "Thư mục "
 #: .\src\izi\templates\izi\dashboard\promotions\page_detail.html:37
 #: .\src\izi\templates\izi\dashboard\promotions\promotion_list.html:42
 msgid "Type"
-msgstr "Kiểu "
+msgstr "Kiểu"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:736
 msgid "Option Group"
-msgstr "Lựa chọn nhóm "
+msgstr "Lựa chọn nhóm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:737
 msgid "Select an option group if using type \"Option\" or \"Multi Option\""
@@ -1358,35 +1355,33 @@ msgstr ""
 #: .\src\izi\apps\catalogue\abstract_models.py:738
 #: .\src\izi\templates\izi\dashboard\catalogue\product_class_form.html:100
 msgid "Required"
-msgstr "Yêu cầu "
+msgstr "Yêu cầu"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:744
 msgid "Product attribute"
-msgstr "Thuộc tính sản phẩm "
+msgstr "Thuộc tính sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:745
 #: .\src\izi\templates\izi\dashboard\catalogue\product_class_form.html:40
 #: .\src\izi\templates\izi\dashboard\catalogue\product_class_form.html:86
 msgid "Product attributes"
-msgstr "Những thuộc tính sản phẩm "
+msgstr "Những thuộc tính sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:827
-#, fuzzy
-#| msgid "Must be a float"
 msgid "Must be str"
-msgstr "Phải là số nguyên "
+msgstr "Phải là chuỗi văn bản"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:834
 msgid "Must be a float"
-msgstr "Phải là số nguyên "
+msgstr "Phải là số nguyên"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:840
 msgid "Must be an integer"
-msgstr "Phải là số "
+msgstr "Phải là số"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:844
 msgid "Must be a date or datetime"
-msgstr "phải là ngày hoặc ngày giờ "
+msgstr "phải là ngày hoặc ngày giờ"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:848
 msgid "Must be a datetime"
@@ -1394,7 +1389,7 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:852
 msgid "Must be a boolean"
-msgstr "Phải là giá trị đúng/sai "
+msgstr "Phải là giá trị đúng/sai"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:856
 msgid "Must be a model instance"
@@ -1406,11 +1401,11 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:874
 msgid "Must be an AttributeOption model object instance"
-msgstr "Phải là thuộc tính "
+msgstr "Phải là thuộc tính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:876
 msgid "AttributeOption has not been saved yet"
-msgstr "Thuộc tính chưa được lưu "
+msgstr "Thuộc tính chưa được lưu"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:882
 #, python-format
@@ -1419,19 +1414,19 @@ msgstr "%(enum)s không là hợp lý cho  %(attr)s"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:887
 msgid "Must be a file field"
-msgstr "Phải là thư mục "
+msgstr "Phải là thư mục"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:902
 msgid "Attribute"
-msgstr "Thuộc tính "
+msgstr "Thuộc tính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:911
 msgid "Boolean"
-msgstr "Đúng / Sai "
+msgstr "Đúng / Sai"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:913
 msgid "Richtext"
-msgstr "Văn bản "
+msgstr "Văn bản"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:915
 msgid "DateTime"
@@ -1443,35 +1438,35 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:925
 msgid "Value option"
-msgstr "Giá trị lựa chọn "
+msgstr "Giá trị lựa chọn"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:970
 msgid "Product attribute value"
-msgstr "Giá trị thuộc tính sản phẩm "
+msgstr "Giá trị thuộc tính sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:971
 msgid "Product attribute values"
-msgstr "Những giá trị thuộc tính sản phẩm "
+msgstr "Những giá trị thuộc tính sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1039
 msgid "Attribute option group"
-msgstr "Thuộc tính nhóm sản phẩm "
+msgstr "Thuộc tính nhóm sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1040
 msgid "Attribute option groups"
-msgstr "Những giá trị nhóm sản phẩm "
+msgstr "Những giá trị nhóm sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1057
 msgid "Group"
-msgstr "Nhóm "
+msgstr "Nhóm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1067
 msgid "Attribute option"
-msgstr "Thuộc tính lựa chọn "
+msgstr "Thuộc tính lựa chọn"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1068
 msgid "Attribute options"
-msgstr "Lựa chọn thuộc tính "
+msgstr "Lựa chọn thuộc tính"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1089
 msgid "Required - a value for this option must be specified"
@@ -1483,11 +1478,11 @@ msgstr "Tùy chọn -  giá trị cho tùy chọn này có thể được bỏ q
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1162
 msgid "Original"
-msgstr "Nguồn gốc "
+msgstr "Nguồn gốc"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1163
 msgid "Caption"
-msgstr "Chú thích "
+msgstr "Chú thích"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1168
 msgid ""
@@ -1497,11 +1492,11 @@ msgstr ""
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1178
 msgid "Product image"
-msgstr "Hình ảnh sản phẩm "
+msgstr "Hình ảnh sản phẩm"
 
 #: .\src\izi\apps\catalogue\abstract_models.py:1179
 msgid "Product images"
-msgstr "Những hình ảnh của sản phẩm "
+msgstr "Những hình ảnh của sản phẩm"
 
 #: .\src\izi\apps\catalogue\config.py:8
 #: .\src\izi\apps\dashboard\catalogue\config.py:8 .\src\izi\defaults.py:101
@@ -1516,7 +1511,7 @@ msgstr "%(obj)s không có thuộc tính  '%(attr)s'"
 #: .\src\izi\apps\catalogue\product_attributes.py:42
 #, python-format
 msgid "%(attr)s attribute cannot be blank"
-msgstr "%(attr)s thuộc tính không thể để trống "
+msgstr "%(attr)s thuộc tính không thể để trống"
 
 #: .\src\izi\apps\catalogue\product_attributes.py:49
 #, python-format
@@ -1535,7 +1530,7 @@ msgstr "Tiêu đề"
 #: .\src\izi\templates\izi\customer\notifications\detail.html:28
 #: .\src\izi\templates\izi\dashboard\users\detail.html:178
 msgid "Body"
-msgstr "Sản phẩm "
+msgstr "Body"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:48
 msgctxt "Anonymous reviewer name"
@@ -1549,45 +1544,45 @@ msgstr "Tên"
 #: .\src\izi\templates\izi\dashboard\pages\index.html:51
 #: .\src\izi\templates\izi\dashboard\promotions\pagepromotion_list.html:43
 msgid "URL"
-msgstr "Đường dẫn "
+msgstr "Đường dẫn"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:55
 msgid "Requires moderation"
-msgstr "Bắt buộc kiểm duyệt "
+msgstr "Bắt buộc kiểm duyệt"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:56
 #: .\src\izi\apps\dashboard\reviews\forms.py:13
 msgid "Approved"
-msgstr "Đồng ý "
+msgstr "Đồng ý"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:57
 #: .\src\izi\apps\dashboard\reviews\forms.py:14
 msgid "Rejected"
-msgstr "Loại bỏ "
+msgstr "Loại bỏ"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:65
 msgid "Total Votes"
-msgstr "Tổng phiếu "
+msgstr "Tổng phiếu"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:67
 msgid "Delta Votes"
-msgstr "Phiếu Delta "
+msgstr "Phiếu Delta"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:79
 msgid "Product review"
-msgstr "Xem trước sản phẩm "
+msgstr "Xem trước sản phẩm"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:80
 msgid "Product reviews"
-msgstr "Những lượt xem sản phẩm "
+msgstr "Những lượt xem sản phẩm"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:98
 msgid "Anonymous reviews must include a name and an email"
-msgstr "Người không phải là thành viên có thể đánh giá với tên và email "
+msgstr "Người không phải là thành viên có thể đánh giá với tên và email"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:151
 msgid "anonymous"
-msgstr "Người chưa đăng ký thành viên "
+msgstr "Người chưa đăng ký thành viên"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:173
 msgid "Only signed in users can vote"
@@ -1595,62 +1590,62 @@ msgstr "Chỉ người có thể bỏ phiếu"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:199
 msgid "Up"
-msgstr "Lên trên "
+msgstr "Lên trên"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:200
 msgid "Down"
-msgstr "Xuống dưới "
+msgstr "Xuống dưới"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:202
 msgid "Delta"
-msgstr "Delta "
+msgstr "Delta"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:210
 msgid "Vote"
-msgstr "Phiếu "
+msgstr "Phiếu"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:211
 #: .\src\izi\templates\izi\dashboard\reviews\review_delete.html:40
 #: .\src\izi\templates\izi\dashboard\reviews\review_list.html:60
 msgid "Votes"
-msgstr "Những phiếu bầu "
+msgstr "Những phiếu bầu"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:219
 msgid "You cannot vote on your own reviews"
-msgstr "Bạn không thể bỏ phiếu đánh giá của bạn "
+msgstr "Bạn không thể bỏ phiếu đánh giá của bạn"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:222
 msgid "Only signed-in users can vote on reviews"
-msgstr "Chỉ thành viên mới có thể bỏ phiếu đánh giá "
+msgstr "Chỉ thành viên mới có thể bỏ phiếu đánh giá"
 
 #: .\src\izi\apps\catalogue\reviews\abstract_models.py:226
 msgid "You can only vote once on a review"
-msgstr "Bạn chỉ được bỏ phiếu đánh giá "
+msgstr "Bạn chỉ được bỏ phiếu đánh giá"
 
 #: .\src\izi\apps\catalogue\reviews\config.py:8
 msgid "Catalogue reviews"
-msgstr "Đánh giá danh mục "
+msgstr "Đánh giá danh mục"
 
 #: .\src\izi\apps\catalogue\reviews\forms.py:52
 msgid "Recency"
-msgstr "Gần nhất "
+msgstr "Gần nhất"
 
 #: .\src\izi\apps\catalogue\reviews\forms.py:57
 #: .\src\izi\apps\search\forms.py:83
 msgid "Sort by"
-msgstr "Sắp xếp theo "
+msgstr "Sắp xếp theo"
 
 #: .\src\izi\apps\catalogue\reviews\views.py:33
 msgid "You have already reviewed this product!"
-msgstr "Bạn đã đánh giá sản phẩm này "
+msgstr "Bạn đã đánh giá sản phẩm này!"
 
 #: .\src\izi\apps\catalogue\reviews\views.py:35
 msgid "You can't leave a review for this product."
-msgstr "Bạn không thể rời trang đánh giá sản phẩm này "
+msgstr "Bạn không thể rời trang đánh giá sản phẩm này."
 
 #: .\src\izi\apps\catalogue\reviews\views.py:60
 msgid "Thank you for reviewing this product"
-msgstr "Cảm ơn bạn đã đánh giá sản phẩm này "
+msgstr "Cảm ơn bạn đã đánh giá sản phẩm này"
 
 #: .\src\izi\apps\catalogue\reviews\views.py:98
 msgid "Thanks for voting!"
@@ -1673,7 +1668,7 @@ msgstr "Số trang không hợp lệ."
 #: .\src\izi\apps\catalogue\views.py:135
 #: .\src\izi\templates\izi\partials\nav_primary.html:45
 msgid "All products"
-msgstr "Tất cả sản phẩm "
+msgstr "Tất cả sản phẩm"
 
 #: .\src\izi\apps\checkout\config.py:8
 #: .\src\izi\templates\izi\basket\partials\basket_quick.html:39
@@ -1683,7 +1678,7 @@ msgstr "Thanh toán"
 
 #: .\src\izi\apps\checkout\forms.py:53
 msgid "My email address is"
-msgstr "Địa chỉ email "
+msgstr "Địa chỉ email của tôi là"
 
 #: .\src\izi\apps\checkout\forms.py:56
 msgid "I am a new customer and want to checkout as a guest"
@@ -1691,15 +1686,15 @@ msgstr "Tôi là khách hàng mới và muốn thanh toán như là một khách
 
 #: .\src\izi\apps\checkout\forms.py:57
 msgid "I am a new customer and want to create an account before checking out"
-msgstr "Tôi là khách hàng mới và muốn tạo một tài khoản trước khi thoát "
+msgstr "Tôi là khách hàng mới và muốn tạo một tài khoản trước khi thoát"
 
 #: .\src\izi\apps\checkout\forms.py:59
 msgid "I am a returning customer, and my password is"
-msgstr "Tôi là một khách hàng quay trở lại, và mật khẩu của tôi là "
+msgstr "Tôi là một khách hàng quay trở lại, và mật khẩu của tôi là"
 
 #: .\src\izi\apps\checkout\forms.py:73 .\src\izi\apps\customer\forms.py:141
 msgid "A user with that email address already exists"
-msgstr "Một người dùng có địa chỉ email đã tồn tại "
+msgstr "Một người dùng có địa chỉ email đã tồn tại"
 
 #: .\src\izi\apps\checkout\session.py:113
 msgid "You need to add some items to your basket to checkout"
@@ -1727,11 +1722,11 @@ msgid ""
 "Your previously chosen shipping address is no longer valid.  Please choose "
 "another one"
 msgstr ""
-"Địa chỉ giao hàng cũ của bạn không chính xác. Vui lòng chọn một địa chỉ khác "
+"Địa chỉ giao hàng cũ của bạn không chính xác. Vui lòng chọn một địa chỉ khác"
 
 #: .\src\izi\apps\checkout\session.py:192
 msgid "Please choose a shipping method"
-msgstr "Vui lòng chọn phương thức giao hàng "
+msgstr "Vui lòng chọn phương thức giao hàng"
 
 #: .\src\izi\apps\checkout\session.py:204
 msgid ""
@@ -1751,11 +1746,11 @@ msgstr ""
 
 #: .\src\izi\apps\checkout\views.py:213
 msgid "Address saved"
-msgstr "Lưu địa chỉ "
+msgstr "Lưu địa chỉ"
 
 #: .\src\izi\apps\checkout\views.py:228
 msgid "Address deleted"
-msgstr "Xóa địa chỉ "
+msgstr "Xóa địa chỉ"
 
 #: .\src\izi\apps\checkout\views.py:283
 msgid "Shipping is unavailable for your chosen address - please choose another"
@@ -1773,19 +1768,19 @@ msgid ""
 "been taken.  Please contact customer services if this problem persists"
 msgstr ""
 "Một vấn đề xảy ra trong khi xử lý thanh toán cho đơn hàng này .Hãy liên hệ "
-"với dịch vụ khách hàng nếu vấn đề này vẫn tồn tại !"
+"với dịch vụ khách hàng nếu vấn đề này vẫn tồn tại"
 
 #: .\src\izi\apps\checkout\views.py:680
 msgid "No order found"
-msgstr "Không tìm thấy đơn hàng "
+msgstr "Không tìm thấy đơn hàng"
 
 #: .\src\izi\apps\customer\abstract_models.py:57
 msgid "email address"
-msgstr "Địa chỉ email "
+msgstr "địa chỉ email"
 
 #: .\src\izi\apps\customer\abstract_models.py:63
 msgid "Staff status"
-msgstr "tình trạng nhân viên "
+msgstr "tình trạng nhân viên"
 
 #: .\src\izi\apps\customer\abstract_models.py:64
 msgid "Designates whether the user can log into this admin site."
@@ -1798,7 +1793,7 @@ msgstr "Chỉ định xem ai có thể đăng nhập vào trang web quản trị
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_detail.html:99
 #: .\src\izi\templates\izi\dashboard\vouchers\voucher_set_list.html:49
 msgid "Active"
-msgstr "Hoạt động "
+msgstr "Hoạt động"
 
 #: .\src\izi\apps\customer\abstract_models.py:68
 msgid ""
@@ -1810,18 +1805,18 @@ msgstr ""
 
 #: .\src\izi\apps\customer\abstract_models.py:70
 msgid "date joined"
-msgstr "Ngày tham gia "
+msgstr "Ngày tham gia"
 
 #: .\src\izi\apps\customer\abstract_models.py:80
 #: .\src\izi\apps\partner\abstract_models.py:33
 #: .\src\izi\templates\izi\dashboard\partners\partner_list.html:45
 #: .\src\izi\templates\izi\dashboard\partners\partner_manage.html:36
 msgid "Users"
-msgstr "Người sử dụng "
+msgstr "Người sử dụng"
 
 #: .\src\izi\apps\customer\abstract_models.py:119
 msgid "Email Address"
-msgstr ""
+msgstr "Địa chỉ email"
 
 #: .\src\izi\apps\customer\abstract_models.py:120
 #: .\src\izi\templates\izi\customer\email\email_detail.html:19
@@ -1829,20 +1824,20 @@ msgstr ""
 #: .\src\izi\templates\izi\customer\notifications\detail.html:24
 #: .\src\izi\templates\izi\dashboard\comms\detail.html:89
 msgid "Subject"
-msgstr "Chủ đề "
+msgstr "Chủ đề"
 
 #: .\src\izi\apps\customer\abstract_models.py:121
 msgid "Body Text"
-msgstr "Thông tin "
+msgstr "Thông tin"
 
 #: .\src\izi\apps\customer\abstract_models.py:122
 #: .\src\izi\templates\izi\dashboard\comms\detail.html:97
 msgid "Body HTML"
-msgstr "Body HTML "
+msgstr "Body HTML"
 
 #: .\src\izi\apps\customer\abstract_models.py:123
 msgid "Date Sent"
-msgstr "Ngày gửi "
+msgstr "Ngày gửi"
 
 #: .\src\izi\apps\customer\abstract_models.py:129
 #: .\src\izi\templates\izi\dashboard\comms\detail.html:17
@@ -1851,7 +1846,7 @@ msgstr "Ngày gửi "
 #: .\src\izi\templates\izi\dashboard\comms\list.html:21
 #: .\src\izi\templates\izi\dashboard\comms\list.html:27
 msgid "Emails"
-msgstr "Email "
+msgstr "Email"
 
 #: .\src\izi\apps\customer\abstract_models.py:133
 #, python-format
@@ -1865,39 +1860,39 @@ msgstr ""
 
 #: .\src\izi\apps\customer\abstract_models.py:157
 msgid "Code used for looking up this event programmatically"
-msgstr "Mã khách hàng dùng cho chương trình tìm kiếm "
+msgstr "Mã khách hàng dùng cho chương trình tìm kiếm"
 
 #: .\src\izi\apps\customer\abstract_models.py:162
 msgid "This is just used for organisational purposes"
-msgstr "Điều này chỉ được sử dụng cho mục đích tổ chức "
+msgstr "Điều này chỉ được sử dụng cho mục đích tổ chức"
 
 #: .\src\izi\apps\customer\abstract_models.py:169
 msgid "Order related"
-msgstr "Đơn hàng liên quan "
+msgstr "Đơn hàng liên quan"
 
 #: .\src\izi\apps\customer\abstract_models.py:170
 msgid "User related"
-msgstr "Khách hàng có liên quan "
+msgstr "Khách hàng có liên quan"
 
 #: .\src\izi\apps\customer\abstract_models.py:182
 msgid "Email Subject Template"
-msgstr "Tiêu đề mẫu email "
+msgstr "Tiêu đề mẫu email"
 
 #: .\src\izi\apps\customer\abstract_models.py:184
 msgid "Email Body Template"
-msgstr "Nội dung mẫu email "
+msgstr "Nội dung mẫu email"
 
 #: .\src\izi\apps\customer\abstract_models.py:186
 msgid "Email Body HTML Template"
-msgstr "Nội dung mẫu HTML "
+msgstr "Nội dung mẫu HTML"
 
 #: .\src\izi\apps\customer\abstract_models.py:187
 msgid "HTML template"
-msgstr "Mẫu HTML "
+msgstr "Mẫu HTML"
 
 #: .\src\izi\apps\customer\abstract_models.py:190
 msgid "SMS Template"
-msgstr "Mẫu SMS "
+msgstr "Mẫu SMS"
 
 #: .\src\izi\apps\customer\abstract_models.py:192
 msgid "SMS template"
@@ -2364,7 +2359,7 @@ msgstr "'%(title)s' đã được xóa từ danh sách yêu thích '%(name)s' "
 #: .\src\izi\apps\customer\wishlists\views.py:316
 #, python-format
 msgid "Wish list '%(name)s' already containing '%(title)s'"
-msgstr ""
+msgstr "Danh sách yêu thích '%(name)s' đã tồn tại '%(title)s' rồi"
 
 #: .\src\izi\apps\customer\wishlists\views.py:324
 #, python-format
@@ -3071,7 +3066,7 @@ msgstr "Trạng thái mới '%s' không hợp lệ cho đơn hàng này "
 #: .\src\izi\apps\dashboard\orders\views.py:608
 #, python-format
 msgid "Unable to change order status due to payment error: %s"
-msgstr "Không thể thay đổi trạng thái đơn hàng do lỗi thanh toán: %s "
+msgstr "Không thể thay đổi trạng thái đơn hàng do lỗi thanh toán: %s"
 
 #: .\src\izi\apps\dashboard\orders\views.py:422
 #: .\src\izi\apps\dashboard\orders\views.py:600
@@ -3082,7 +3077,7 @@ msgstr ""
 
 #: .\src\izi\apps\dashboard\orders\views.py:471
 msgid "No valid action submitted"
-msgstr "Yêu cầu gửi không hợp lệ "
+msgstr "Yêu cầu gửi không hợp lệ"
 
 #: .\src\izi\apps\dashboard\orders\views.py:475
 #: .\src\izi\apps\dashboard\orders\views.py:480 .\src\izi\views\generic.py:62

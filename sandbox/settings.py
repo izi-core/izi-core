@@ -29,14 +29,22 @@ MANAGERS = ADMINS
 
 # Use a Sqlite database by default
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
+    #     'NAME': os.environ.get('DATABASE_NAME', location('db.sqlite')),
+    #     'USER': os.environ.get('DATABASE_USER', None),
+    #     'PASSWORD': os.environ.get('DATABASE_PASSWORD', None),
+    #     'HOST': os.environ.get('DATABASE_HOST', None),
+    #     'PORT': os.environ.get('DATABASE_PORT', None),
+    #     'ATOMIC_REQUESTS': True
+    # }
     'default': {
-        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.environ.get('DATABASE_NAME', location('db.sqlite')),
-        'USER': os.environ.get('DATABASE_USER', None),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', None),
-        'HOST': os.environ.get('DATABASE_HOST', None),
-        'PORT': os.environ.get('DATABASE_PORT', None),
-        'ATOMIC_REQUESTS': True
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'izi-ecommerce',
+        'USER': 'izi-ecommerce',
+        'PASSWORD': 'a123456bc',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -59,7 +67,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'vi'
+LANGUAGE_CODE = 'en-gb'
 
 # Includes all languages that have >50% coverage in Transifex
 # Taken from Django's default setting for LANGUAGES

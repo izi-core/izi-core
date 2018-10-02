@@ -1,26 +1,26 @@
 /*global jQuery */
 
-var izi = (function(o, $) {
+var izi = (function (o, $) {
 
-    o.getCsrfToken = function() {
+    o.getCsrfToken = function () {
         // Extract CSRF token from cookies
         var cookies = document.cookie.split(';');
         var csrf_token = null;
-        $.each(cookies, function(index, cookie) {
+        $.each(cookies, function (index, cookie) {
             var cookieParts = $.trim(cookie).split('=');
             if (cookieParts[0] == 'csrftoken') {
                 csrf_token = cookieParts[1];
             }
         });
         // Extract from cookies fails for HTML-Only cookies
-        if (! csrf_token) {
+        if (!csrf_token) {
             csrf_token = $(document.forms.valueOf()).find('[name="csrfmiddlewaretoken"]')[0].value;
         }
         return csrf_token;
     };
 
     o.dashboard = {
-        init: function(options) {
+        init: function (options) {
             // Run initialisation that should take place on every page of the dashboard.
             var defaults = {
                 'languageCode': 'en',
@@ -35,9 +35,9 @@ var izi = (function(o, $) {
                     menubar: false,
                     plugins: "link lists",
                     style_formats: [
-                        {title: 'Text', block: 'p'},
-                        {title: 'Heading', block: 'h2'},
-                        {title: 'Subheading', block: 'h3'}
+                        { title: 'Text', block: 'p' },
+                        { title: 'Heading', block: 'h2' },
+                        { title: 'Subheading', block: 'h3' }
                     ],
                     toolbar: "styleselect | bold italic blockquote | bullist numlist | link"
                 }
@@ -47,7 +47,7 @@ var izi = (function(o, $) {
             o.dashboard.initWidgets(window.document);
             o.dashboard.initForms();
 
-            $(".category-select ul").prev('a').on('click', function(){
+            $(".category-select ul").prev('a').on('click', function () {
                 var $this = $(this),
                     plus = $this.hasClass('ico_expand');
                 if (plus) {
@@ -59,14 +59,14 @@ var izi = (function(o, $) {
             });
 
             // Adds error icon if there are errors in the product update form
-            $('[data-behaviour="affix-nav-errors"] .tab-pane').each(function(){
+            $('[data-behaviour="affix-nav-errors"] .tab-pane').each(function () {
                 var productErrorListener = $(this).find('[class*="error"]:not(:empty)').closest('.tab-pane').attr('id');
                 $('[data-spy="affix"] a[href="#' + productErrorListener + '"]').append('<i class="icon-info-sign pull-right"></i>');
             });
 
             o.dashboard.filereader.init();
         },
-        initWidgets: function(el) {
+        initWidgets: function (el) {
             /** Attach widgets to form input.
              *
              * This function is called once for the whole page. In that case el is window.document.
@@ -83,23 +83,23 @@ var izi = (function(o, $) {
             o.dashboard.initWYSIWYG(el);
             o.dashboard.initSelects(el);
         },
-        initMasks: function(el) {
+        initMasks: function (el) {
             $(el).find(':input').inputmask();
         },
-        initSelects: function(el) {
+        initSelects: function (el) {
             // Adds type/search for select fields
             var $selects = $(el).find('select').not('.no-widget-init select').not('.no-widget-init');
             $selects.filter('.form-stacked select').css('width', '95%');
             $selects.filter('.form-inline select').css('width', '300px');
-            $selects.select2({width: 'resolve'});
-            $(el).find('select.select2').each(function(i, e) {
+            $selects.select2({ width: 'resolve' });
+            $(el).find('select.select2').each(function (i, e) {
                 var opts = {};
-                if($(e).data('ajax-url')) {
+                if ($(e).data('ajax-url')) {
                     opts = {
                         ajax: {
                             url: $(e).data('ajax-url'),
                             dataType: 'json',
-                            data: function(params) {
+                            data: function (params) {
                                 return {
                                     q: params.term,
                                     page: params.page || 1
@@ -112,7 +112,7 @@ var izi = (function(o, $) {
                 $(e).select2(opts);
             });
         },
-        initDatePickers: function(el) {
+        initDatePickers: function (el) {
             if ($.fn.datetimepicker) {
                 var defaultDatepickerConfig = {
                     'format': o.dashboard.options.dateFormat,
@@ -121,7 +121,7 @@ var izi = (function(o, $) {
                     'minView': 2
                 };
                 var $dates = $(el).find('[data-iziWidget="date"]').not('.no-widget-init').not('.no-widget-init *');
-                $dates.each(function(ind, ele) {
+                $dates.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatepickerConfig, {
                             'format': $ele.data('dateformat')
@@ -137,7 +137,7 @@ var izi = (function(o, $) {
                     'initialDate': o.dashboard.options.initialDate
                 };
                 var $datetimes = $(el).find('[data-iziWidget="datetime"]').not('.no-widget-init').not('.no-widget-init *');
-                $datetimes.each(function(ind, ele) {
+                $datetimes.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatetimepickerConfig, {
                             'format': $ele.data('datetimeformat'),
@@ -154,7 +154,7 @@ var izi = (function(o, $) {
                     'initialDate': o.dashboard.options.initialDate
                 };
                 var $times = $(el).find('[data-iziWidget="time"]').not('.no-widget-init').not('.no-widget-init *');
-                $times.each(function(ind, ele) {
+                $times.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultTimepickerConfig, {
                             'format': $ele.data('timeformat'),
@@ -167,32 +167,32 @@ var izi = (function(o, $) {
                 });
             }
         },
-        initWYSIWYG: function(el) {
+        initWYSIWYG: function (el) {
             // Use TinyMCE by default
             var $textareas = $(el).find('textarea').not('.no-widget-init textarea').not('.no-widget-init');
             $textareas.filter('form.wysiwyg textarea').tinymce(o.dashboard.options.tinyConfig);
             $textareas.filter('.wysiwyg').tinymce(o.dashboard.options.tinyConfig);
         },
-        initForms: function() {
+        initForms: function () {
             // Disable buttons when they are clicked and show a "loading" message taken from the
             // data-loading-text attribute (http://getbootstrap.com/2.3.2/javascript.html#buttons).
             // Do not disable if button is inside a form with invalid fields.
             // This uses a delegated event so that it keeps working for forms that are reloaded
             // via AJAX: https://api.jquery.com/on/#direct-and-delegated-events
-            $(document.body).on('click', '[data-loading-text]', function(){
+            $(document.body).on('click', '[data-loading-text]', function () {
                 var form = $(this).parents("form");
                 if (!form || $(":invalid", form).length == 0)
                     $(this).button('loading');
             });
         },
         offers: {
-            init: function() {
+            init: function () {
                 izi.dashboard.offers.adjustBenefitForm();
-                $('#id_type').change(function() {
+                $('#id_type').change(function () {
                     izi.dashboard.offers.adjustBenefitForm();
                 });
             },
-            adjustBenefitForm: function() {
+            adjustBenefitForm: function () {
                 var type = $('#id_type').val(),
                     $valueContainer = $('#id_value').parents('.control-group');
                 if (type == 'Multibuy') {
@@ -204,27 +204,27 @@ var izi = (function(o, $) {
             }
         },
         product_attributes: {
-            init: function(){
+            init: function () {
                 var type_selects = $("select[name$=type]");
 
-                type_selects.each(function(){
+                type_selects.each(function () {
                     o.dashboard.product_attributes.toggleOptionGroup($(this));
                 });
 
-                type_selects.change(function(){
+                type_selects.change(function () {
                     o.dashboard.product_attributes.toggleOptionGroup($(this));
                 });
             },
 
-            toggleOptionGroup: function(type_select){
+            toggleOptionGroup: function (type_select) {
                 var option_group_select = $('#' + type_select.attr('id').replace('type', 'option_group'));
                 var v = type_select.val();
                 option_group_select.parent().parent().toggle(v === 'option' || v === 'multi_option');
             }
         },
         ranges: {
-            init: function() {
-                $('[data-behaviours~="remove"]').click(function() {
+            init: function () {
+                $('[data-behaviours~="remove"]').click(function () {
                     var $this = $(this);
                     $this.parents('table').find('input').prop('checked', false);
                     $this.parents('tr').find('input').prop('checked', true);
@@ -233,45 +233,45 @@ var izi = (function(o, $) {
             }
         },
         orders: {
-            initTabs: function() {
+            initTabs: function () {
                 if (location.hash) {
                     $('.nav-tabs a[href=' + location.hash + ']').tab('show');
                 }
             },
-            initTable: function() {
+            initTable: function () {
                 var table = $('form table'),
                     input = $('<input type="checkbox" />').css({
                         'margin-right': '5px',
                         'vertical-align': 'top'
                     });
                 $('th:first', table).prepend(input);
-                $(input).change(function(){
-                    $('tr', table).each(function() {
+                $(input).change(function () {
+                    $('tr', table).each(function () {
                         $('td:first input', this).prop("checked", $(input).is(':checked'));
                     });
                 });
             }
         },
-        reordering: (function() {
+        reordering: (function () {
             var options = {
-                    handle: '.btn-handle',
-                    submit_url: '#'
-                },
-                saveOrder = function(data) {
-                // Get the csrf token, otherwise django will not accept the
-                // POST request.
+                handle: '.btn-handle',
+                submit_url: '#'
+            },
+                saveOrder = function (data) {
+                    // Get the csrf token, otherwise django will not accept the
+                    // POST request.
                     var csrf = o.getCsrfToken();
                     $.ajax({
                         type: 'POST',
                         data: $.param(data),
                         dataType: "json",
                         url: options.submit_url,
-                        beforeSend: function(xhr) {
+                        beforeSend: function (xhr) {
                             xhr.setRequestHeader("X-CSRFToken", csrf);
                         }
                     });
                 },
-                init = function(user_options) {
+                init = function (user_options) {
                     options = $.extend(options, user_options);
                     var group = $(options.wrapper).sortable({
                         group: 'serialization',
@@ -291,7 +291,7 @@ var izi = (function(o, $) {
                             }
                             else {
                                 var parts = parent.attr('id').split('_');
-                                return {'name': parts[0], 'value': parts[1]};
+                                return { 'name': parts[0], 'value': parts[1] };
                             }
                         }
                     });
@@ -303,14 +303,14 @@ var izi = (function(o, $) {
             };
         }()),
         search: {
-            init: function() {
+            init: function () {
                 var searchForm = $(".orders_search"),
                     searchLink = $('.pull_out'),
                     doc = $('document');
-                searchForm.each(function() {
+                searchForm.each(function () {
                     doc.css('height', doc.height());
                 });
-                searchLink.on('click', function() {
+                searchLink.on('click', function () {
                     searchForm.parent()
                         .find('.pull-left')
                         .toggleClass('no-float')
@@ -321,18 +321,18 @@ var izi = (function(o, $) {
             }
         },
         filereader: {
-            init: function() {
+            init: function () {
                 // Add local file loader to update image files on change in
                 // dashboard. This will provide a preview to the selected
                 // image without uploading it. Upload only occures when
                 // submitting the form.
                 if (window.FileReader) {
-                    $('input[type="file"]').change(function(evt) {
+                    $('input[type="file"]').change(function (evt) {
                         var reader = new FileReader();
                         var imgId = evt.target.id + "-image";
-                        reader.onload = (function() {
-                            return function(e) {
-                                var imgDiv = $("#"+imgId);
+                        reader.onload = (function () {
+                            return function (e) {
+                                var imgDiv = $("#" + imgId);
                                 imgDiv.children('img').attr('src', e.target.result);
                             };
                         })();
@@ -342,10 +342,10 @@ var izi = (function(o, $) {
             }
         },
         product_lists: {
-            init: function() {
+            init: function () {
                 var imageModal = $("#product-image-modal"),
                     thumbnails = $('.sub-image');
-                thumbnails.click(function(e){
+                thumbnails.click(function (e) {
                     e.preventDefault();
                     var a = $(this);
                     imageModal.find('h4').text(a.find('img').attr('alt'));

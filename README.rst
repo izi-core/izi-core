@@ -131,7 +131,7 @@ The following extensions are stable and ready for use:
 
 * izi-core-datacash_ - Integration with the DataCash_ payment gateway
 
-* izi-core-paypal_ - Integration with PayPal.  This currently supports both
+* izi-paypal_ - Integration with PayPal.  This currently supports both
   `Express Checkout`_ and `PayFlow Pro`_.
 
 * izi-core-paymentexpress_ - Integration with the `Payment Express`_ payment
@@ -158,7 +158,7 @@ The following extensions are stable and ready for use:
 .. _izi-core-paymentexpress: https://github.com/izi-ecommerce/izi-core-paymentexpress
 .. _`Payment Express`: http://www.paymentexpress.com
 .. _DataCash: http://www.datacash.com/
-.. _izi-core-paypal: https://github.com/izi-ecommerce/izi-core-paypal
+.. _izi-paypal: https://github.com/izi-ecommerce/izi-paypal
 .. _`Express Checkout`: https://www.paypal.com/uk/cgi-bin/webscr?cmd=_additional-payment-ref-impl1
 .. _`PayFlow Pro`: https://merchant.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=merchant/payment_gateway
 .. _izi-core-accounts: https://github.com/izi-core/izi-accounts

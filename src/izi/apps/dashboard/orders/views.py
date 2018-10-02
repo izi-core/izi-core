@@ -638,6 +638,7 @@ class OrderDetailView(DetailView):
                            % new_status)
             return self.reload_page()
         errors = []
+
         for line in lines:
             if new_status not in line.available_statuses():
                 errors.append(_("'%(status)s' is not a valid new status for"
@@ -649,12 +650,17 @@ class OrderDetailView(DetailView):
 
         msgs = []
         for line in lines:
-            msg = _("Status of line #%(line_id)d changed from '%(old_status)s'"
-                    " to '%(new_status)s'") % {'line_id': line.id,
-                                               'old_status': line.status,
-                                               'new_status': new_status}
+            if request.user.id == line.partner_id or request.user.is_superuser:
+                msg = _("Status of line #%(line_id)d changed from '%(old_status)s'"
+                        " to '%(new_status)s'") % {'line_id': line.id,
+                                                   'old_status': line.status,
+                                                   'new_status': new_status}
+                line.set_status(new_status)
+            else:
+                msg = _("Could not update status to '%(status)s'"
+                        " due to the order line # %(line_id)d does not owned by you") % {'status': new_status,
+                                                                                          'line_id': line.id}
             msgs.append(msg)
-            line.set_status(new_status)
         message = "\n".join(msgs)
         messages.info(request, message)
         order.notes.create(user=request.user, message=message,

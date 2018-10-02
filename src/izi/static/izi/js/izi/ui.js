@@ -1,41 +1,41 @@
 /*global jQuery */
 
-var izi = (function(o, $) {
+var izi = (function (o, $) {
     // Replicate Django's flash messages so they can be used by AJAX callbacks.
     o.messages = {
-        addMessage: function(tag, msg) {
+        addMessage: function (tag, msg) {
             var msgHTML = '<div class="alert fade in alert-' + tag + '">' +
-                '<a href="#" class="close" data-dismiss="alert">&times;</a>'  + msg +
+                '<a href="#" class="close" data-dismiss="alert">&times;</a>' + msg +
                 '</div>';
             $('#messages').append($(msgHTML));
         },
-        debug: function(msg) { o.messages.addMessage('debug', msg); },
-        info: function(msg) { o.messages.addMessage('info', msg); },
-        success: function(msg) { o.messages.addMessage('success', msg); },
-        warning: function(msg) { o.messages.addMessage('warning', msg); },
-        error: function(msg) { o.messages.addMessage('danger', msg); },
-        clear: function() {
+        debug: function (msg) { o.messages.addMessage('debug', msg); },
+        info: function (msg) { o.messages.addMessage('info', msg); },
+        success: function (msg) { o.messages.addMessage('success', msg); },
+        warning: function (msg) { o.messages.addMessage('warning', msg); },
+        error: function (msg) { o.messages.addMessage('danger', msg); },
+        clear: function () {
             $('#messages').html('');
         },
-        scrollTo: function() {
-            $('html').animate({scrollTop: $('#messages').offset().top});
+        scrollTo: function () {
+            $('html').animate({ scrollTop: $('#messages').offset().top });
         }
     };
 
     o.search = {
-        init: function() {
+        init: function () {
             o.search.initSortWidget();
             o.search.initFacetWidgets();
         },
-        initSortWidget: function() {
+        initSortWidget: function () {
             // Auto-submit (hidden) search form when selecting a new sort-by option
-            $('#id_sort_by').on('change', function() {
+            $('#id_sort_by').on('change', function () {
                 $(this).closest('form').submit();
             });
         },
-        initFacetWidgets: function() {
+        initFacetWidgets: function () {
             // Bind events to facet checkboxes
-            $('.facet_checkbox').on('change', function() {
+            $('.facet_checkbox').on('change', function () {
                 window.location.href = $(this).nextAll('.facet_url').val();
             });
         }
@@ -43,22 +43,22 @@ var izi = (function(o, $) {
 
     // This block may need removing after reworking of promotions app
     o.promotions = {
-        init: function() {
+        init: function () {
 
         }
     };
 
     // Notifications inbox within 'my account' section.
     o.notifications = {
-        init: function() {
-            $('a[data-behaviours~="archive"]').click(function() {
+        init: function () {
+            $('a[data-behaviours~="archive"]').click(function () {
                 o.notifications.checkAndSubmit($(this), 'archive');
             });
-            $('a[data-behaviours~="delete"]').click(function() {
+            $('a[data-behaviours~="delete"]').click(function () {
                 o.notifications.checkAndSubmit($(this), 'delete');
             });
         },
-        checkAndSubmit: function($ele, btn_val) {
+        checkAndSubmit: function ($ele, btn_val) {
             $ele.closest('tr').find('input').attr('checked', 'checked');
             $ele.closest('form').find('button[value="' + btn_val + '"]').click();
             return false;
@@ -67,7 +67,7 @@ var izi = (function(o, $) {
 
     // Site-wide forms events
     o.forms = {
-        init: function() {
+        init: function () {
             // Forms with this behaviour are 'locked' once they are submitted to
             // prevent multiple submissions
             $('form[data-behaviours~="lock"]').submit(o.forms.submitIfNotLocked);
@@ -77,7 +77,7 @@ var izi = (function(o, $) {
             // Do not disable if button is inside a form with invalid fields.
             // This uses a delegated event so that it keeps working for forms that are reloaded
             // via AJAX: https://api.jquery.com/on/#direct-and-delegated-events
-            $(document.body).on('submit', 'form', function(){
+            $(document.body).on('submit', 'form', function () {
                 var form = $(this);
                 if ($(":invalid", form).length == 0)
                     $(this).find('button[data-loading-text]').button('loading');
@@ -85,19 +85,19 @@ var izi = (function(o, $) {
             // stuff for star rating on review page
             // show clickable stars instead of a select dropdown for product rating
             var ratings = $('.reviewrating');
-            if(ratings.length){
-                ratings.find('.star-rating i').on('click',o.forms.reviewRatingClick);
+            if (ratings.length) {
+                ratings.find('.star-rating i').on('click', o.forms.reviewRatingClick);
             }
         },
-        submitIfNotLocked: function() {
+        submitIfNotLocked: function () {
             var $form = $(this);
             if ($form.data('locked')) {
                 return false;
             }
             $form.data('locked', true);
         },
-        reviewRatingClick: function(){
-            var ratings = ['One','Two','Three','Four','Five']; //possible classes for display state
+        reviewRatingClick: function () {
+            var ratings = ['One', 'Two', 'Three', 'Four', 'Five']; //possible classes for display state
             $(this).parent().removeClass('One Two Three Four Five').addClass(ratings[$(this).index()]);
             $(this).closest('.controls').find('select').val($(this).index() + 1); //select is hidden, set value
         }
@@ -105,9 +105,9 @@ var izi = (function(o, $) {
 
 
     o.page = {
-        init: function() {
+        init: function () {
             // Scroll to sections
-            $('.top_page a').click(function(e) {
+            $('.top_page a').click(function (e) {
                 var href = $(this).attr('href');
                 $('html, body').animate({
                     scrollTop: $(href).offset().top
@@ -120,15 +120,15 @@ var izi = (function(o, $) {
     };
 
     o.responsive = {
-        init: function() {
+        init: function () {
             if (o.responsive.isDesktop()) {
                 o.responsive.initNav();
             }
         },
-        isDesktop: function() {
+        isDesktop: function () {
             return document.body.clientWidth > 767;
         },
-        initNav: function() {
+        initNav: function () {
             // Initial navigation for desktop
             var $sidebar = $('aside.col-sm-3'),
                 $browse = $('[data-navigation="dropdown-menu"]'),
@@ -142,7 +142,7 @@ var izi = (function(o, $) {
                 $sidebar.css({ marginTop: $browse.outerHeight() });
             }
         },
-        initSlider: function() {
+        initSlider: function () {
             $('.carousel').carousel({
                 interval: 20000
             });
@@ -151,51 +151,51 @@ var izi = (function(o, $) {
 
     // IE compabibility hacks
     o.compatibility = {
-        init: function() {
+        init: function () {
             if (!o.compatibility.isIE()) return;
             // Set the width of a select in an overflow hidden container.
             // This is for add-to-basket forms within browing pages
             $('.product_pod select').on({
-                mousedown: function(){
+                mousedown: function () {
                     $(this).addClass("select-open");
                 },
-                change: function(){
+                change: function () {
                     $(this).removeClass("select-open");
                 }
             });
         },
-        isIE: function() {
+        isIE: function () {
             return navigator.userAgent.toLowerCase().indexOf("msie") > -1;
         }
     };
 
     o.basket = {
         is_form_being_submitted: false,
-        init: function(options) {
+        init: function (options) {
             if (typeof options == 'undefined') {
-                options = {'basketURL': document.URL};
+                options = { 'basketURL': document.URL };
             }
             o.basket.url = options.basketURL || document.URL;
-            $('#content_inner').on('click', '#basket_formset a[data-behaviours~="remove"]', function(event) {
+            $('#content_inner').on('click', '#basket_formset a[data-behaviours~="remove"]', function (event) {
                 o.basket.checkAndSubmit($(this), 'form', 'DELETE');
                 event.preventDefault();
             });
-            $('#content_inner').on('click', '#basket_formset a[data-behaviours~="save"]', function(event) {
+            $('#content_inner').on('click', '#basket_formset a[data-behaviours~="save"]', function (event) {
                 o.basket.checkAndSubmit($(this), 'form', 'save_for_later');
                 event.preventDefault();
             });
-            $('#content_inner').on('click', '#saved_basket_formset a[data-behaviours~="move"]', function() {
+            $('#content_inner').on('click', '#saved_basket_formset a[data-behaviours~="move"]', function () {
                 o.basket.checkAndSubmit($(this), 'saved', 'move_to_basket');
             });
-            $('#content_inner').on('click', '#saved_basket_formset a[data-behaviours~="remove"]', function(event) {
+            $('#content_inner').on('click', '#saved_basket_formset a[data-behaviours~="remove"]', function (event) {
                 o.basket.checkAndSubmit($(this), 'saved', 'DELETE');
                 event.preventDefault();
             });
-            $('#content_inner').on('click', '#voucher_form_link a', function(event) {
+            $('#content_inner').on('click', '#voucher_form_link a', function (event) {
                 o.basket.showVoucherForm();
                 event.preventDefault();
             });
-            $('#content_inner').on('click', '#voucher_form_cancel', function(event) {
+            $('#content_inner').on('click', '#voucher_form_cancel', function (event) {
                 o.basket.hideVoucherForm();
                 event.preventDefault();
             });
@@ -204,7 +204,7 @@ var izi = (function(o, $) {
                 o.basket.showVoucherForm();
             }
         },
-        submitBasketForm: function(event) {
+        submitBasketForm: function (event) {
             $('#messages').html('');
             var payload = $('#basket_formset').serializeArray();
             $.post(o.basket.url, payload, o.basket.submitFormSuccess, 'json');
@@ -212,28 +212,28 @@ var izi = (function(o, $) {
                 event.preventDefault();
             }
         },
-        submitFormSuccess: function(data) {
+        submitFormSuccess: function (data) {
             $('#content_inner').html(data.content_html);
 
             // Show any flash messages
             o.messages.clear();
             for (var level in data.messages) {
-                for (var i=0; i<data.messages[level].length; i++) {
+                for (var i = 0; i < data.messages[level].length; i++) {
                     o.messages[level](data.messages[level][i]);
                 }
             }
             o.basket.is_form_being_submitted = false;
         },
-        showVoucherForm: function() {
+        showVoucherForm: function () {
             $('#voucher_form_container').show();
             $('#voucher_form_link').hide();
             $('#id_code').focus();
         },
-        hideVoucherForm: function() {
+        hideVoucherForm: function () {
             $('#voucher_form_container').hide();
             $('#voucher_form_link').show();
         },
-        checkAndSubmit: function($ele, formPrefix, idSuffix) {
+        checkAndSubmit: function ($ele, formPrefix, idSuffix) {
             if (o.basket.is_form_being_submitted) {
                 return;
             }
@@ -247,19 +247,19 @@ var izi = (function(o, $) {
 
     o.checkout = {
         gateway: {
-            init: function() {
+            init: function () {
                 var radioWidgets = $('form input[name=options]');
                 var selectedRadioWidget = $('form input[name=options]:checked');
                 o.checkout.gateway.handleRadioSelection(selectedRadioWidget.val());
                 radioWidgets.change(o.checkout.gateway.handleRadioChange);
                 $('#id_username').focus();
             },
-            handleRadioChange: function() {
+            handleRadioChange: function () {
                 o.checkout.gateway.handleRadioSelection($(this).val());
             },
-            handleRadioSelection: function(value) {
+            handleRadioSelection: function (value) {
                 var pwInput = $('#id_password');
-                if (value == 'anonymous' || value =='new') {
+                if (value == 'anonymous' || value == 'new') {
                     pwInput.attr('disabled', 'disabled');
                 } else {
                     pwInput.removeAttr('disabled');
@@ -269,7 +269,7 @@ var izi = (function(o, $) {
     };
 
     o.datetimepickers = {
-        init: function() {
+        init: function () {
             o.datetimepickers.initDatePickers(window.document);
         },
         options: {
@@ -279,7 +279,7 @@ var izi = (function(o, $) {
             'datetimeFormat': 'yy-mm-dd hh:ii',
             'stepMinute': 15,
         },
-        initDatePickers: function(el) {
+        initDatePickers: function (el) {
             if ($.fn.datetimepicker) {
                 var defaultDatepickerConfig = {
                     'format': o.datetimepickers.options.dateFormat,
@@ -288,7 +288,7 @@ var izi = (function(o, $) {
                     'minView': 2
                 };
                 var $dates = $(el).find('[data-iziWidget="date"]').not('.no-widget-init').not('.no-widget-init *');
-                $dates.each(function(ind, ele) {
+                $dates.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatepickerConfig, {
                             'format': $ele.data('dateformat')
@@ -303,7 +303,7 @@ var izi = (function(o, $) {
                     'language': o.datetimepickers.options.languageCode
                 };
                 var $datetimes = $(el).find('[data-iziWidget="datetime"]').not('.no-widget-init').not('.no-widget-init *');
-                $datetimes.each(function(ind, ele) {
+                $datetimes.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatetimepickerConfig, {
                             'format': $ele.data('datetimeformat'),
@@ -319,7 +319,7 @@ var izi = (function(o, $) {
                     'language': o.datetimepickers.options.languageCode
                 };
                 var $times = $(el).find('[data-iziWidget="time"]').not('.no-widget-init').not('.no-widget-init *');
-                $times.each(function(ind, ele) {
+                $times.each(function (ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultTimepickerConfig, {
                             'format': $ele.data('timeformat'),
@@ -335,7 +335,7 @@ var izi = (function(o, $) {
     };
 
 
-    o.init = function() {
+    o.init = function () {
         o.forms.init();
         o.datetimepickers.init();
         o.page.init();

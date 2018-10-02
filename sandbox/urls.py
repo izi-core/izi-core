@@ -11,6 +11,9 @@ from izi.views import handler403, handler404, handler500
 from apps.gateway import urls as gateway_urls
 from apps.sitemaps import base_sitemaps
 
+from paypal.payflow.dashboard.app import application as payflow
+from paypal.express.dashboard.app import application as express_dashboard
+
 admin.autodiscover()
 
 urlpatterns = [
@@ -26,7 +29,14 @@ urlpatterns = [
         {'sitemaps': base_sitemaps}),
     url(r'^sitemap-(?P<section>.+)\.xml$', views.sitemap,
         {'sitemaps': base_sitemaps},
-        name='django.contrib.sitemaps.views.sitemap')
+        name='django.contrib.sitemaps.views.sitemap'),
+        
+    # [IZI-Paypal] PayPal Express integration...
+    url(r'^checkout/paypal/', include('paypal.express.urls')),
+    # Dashboard views for Payflow Pro
+    url(r'^dashboard/paypal/payflow/', payflow.urls),
+    # Dashboard views for Express
+    url(r'^dashboard/paypal/express/', express_dashboard.urls),
 ]
 
 # Prefix IZI URLs with language codes

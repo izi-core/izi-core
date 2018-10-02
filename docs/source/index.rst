@@ -48,7 +48,7 @@ Features:
 * Extension libraries available for many payment gateways, including PayPal_,
   GoCardless_, DataCash_ and more.
 
-.. _PayPal: https://github.com/izi-ecommerce/izi-core-paypal
+.. _PayPal: https://github.com/izi-ecommerce/izi-paypal
 .. _GoCardless: https://github.com/izi-ecommerce/izi-core-gocardless
 .. _DataCash: https://github.com/izi-ecommerce/izi-core-datacash
 

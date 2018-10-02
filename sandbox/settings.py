@@ -19,8 +19,8 @@ ALLOWED_HOSTS = [
 
 # This is needed for the hosted version of the sandbox
 ADMINS = (
-    ('David Winterbottom', 'dotiendiep@gmail.com'),
-    ('Michael van Tellingen', 'vituocgia@gmail.com'),
+    ('Daniel Do', 'dotiendiep@gmail.com'),
+    ('Vi Tuoc Gia', 'vituocgia@gmail.com'),
 )
 EMAIL_SUBJECT_PREFIX = '[IZI sandbox] '
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -59,7 +59,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'vi'
 
 # Includes all languages that have >50% coverage in Transifex
 # Taken from Django's default setting for LANGUAGES
@@ -72,6 +72,7 @@ LANGUAGES = (
     ('da', gettext_noop('Danish')),
     ('de', gettext_noop('German')),
     ('en-gb', gettext_noop('British English')),
+    ('en-us', gettext_noop('american english')),
     ('el', gettext_noop('Greek')),
     ('es', gettext_noop('Spanish')),
     ('fi', gettext_noop('Finnish')),
@@ -257,6 +258,17 @@ LOGGING = {
             'propagate': True,
             'level': 'INFO',
         },
+        # Paypal LOGGING
+        'paypal.express': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
+        'paypal.payflow': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level': 'DEBUG',
+        },
     }
 }
 
@@ -276,8 +288,11 @@ INSTALLED_APPS = [
     # Debug toolbar + extensions
     'debug_toolbar',
     'apps.gateway',     # For allowing dashboard access
+    'paypal', # For testing with shipping and payment
     'widget_tweaks',
-] + izi.get_core_apps()
+] + izi.get_core_apps([
+    'apps.shipping',
+    'apps.checkout'])
 
 # Add IZI's custom auth backend so users can sign in using their email
 # address.
@@ -346,6 +361,42 @@ IZI_SHOP_TAGLINE = 'Sandbox'
 IZI_RECENTLY_VIEWED_PRODUCTS = 20
 IZI_ALLOW_ANON_CHECKOUT = True
 
+# Payment - Paypal
+from django.utils.translation import ugettext_lazy as _
+IZI_DASHBOARD_NAVIGATION.append(
+    {
+        'label': _('PayPal'),
+        'icon': 'icon-globe',
+        'children': [
+            {
+                'label': _('PayFlow transactions'),
+                'url_name': 'paypal-payflow-list',
+            },
+            {
+                'label': _('Express transactions'),
+                'url_name': 'paypal-express-list',
+            },
+        ]
+    })
+# Taken from PayPal's documentation - these should always work in the sandbox
+PAYPAL_SANDBOX_MODE = True
+PAYPAL_CALLBACK_HTTPS = False
+PAYPAL_API_VERSION = '119'
+
+# These are the standard PayPal sandbox details from the docs - but I don't
+# think you can get access to the merchant dashboard.
+PAYPAL_API_USERNAME = 'sdk-three_api1.sdk.com'
+PAYPAL_API_PASSWORD = 'QFZCWN5HZM8VBG7Q'
+PAYPAL_API_SIGNATURE = 'A-IzJhZZjhg29XQ2qnhapuwxIDzyAZQ92FRP5dqBzVesOkzbdUONzmOU'
+
+# Standard currency is GBP
+PAYPAL_CURRENCY = PAYPAL_PAYFLOW_CURRENCY = 'GBP'
+PAYPAL_PAYFLOW_DASHBOARD_FORMS = True
+# REquired id foor payflow
+PAYPAL_PAYFLOW_VENDOR_ID = "izi-paypal-sandbox"
+PAYPAL_PAYFLOW_PASSWORD = "demo123"
+
+# END Paypal
 
 # Order processing
 # ================
@@ -358,6 +409,13 @@ IZI_INITIAL_LINE_STATUS = 'Pending'
 
 # This dict defines the new order statuses than an order can move to
 IZI_ORDER_STATUS_PIPELINE = {
+    'Pending': ('Being processed', 'Cancelled',),
+    'Being processed': ('Complete', 'Cancelled',),
+    'Cancelled': (),
+    'Complete': (),
+}
+# New Setting for line statues and its flow
+IZI_LINE_STATUS_PIPELINE = {
     'Pending': ('Being processed', 'Cancelled',),
     'Being processed': ('Complete', 'Cancelled',),
     'Cancelled': (),

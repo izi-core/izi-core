@@ -32,12 +32,12 @@ The project would have a 'PayPal' SourceType and, for each order, create a new
 created (although this is optional).
 
 This situation is implemented within the sandbox site for the
-izi-core-paypal_ extension.  Please use that as a reference.
+izi-paypal_ extension.  Please use that as a reference.
 
 See also the sandbox for izi-core-datacash_ which follows a similar pattern.
 
 
-.. _izi-core-paypal: https://github.com/izi-ecommerce/izi-core-paypal/tree/master/sandbox
+.. _izi-paypal: https://github.com/izi-ecommerce/izi-paypal/tree/master/sandbox
 .. _izi-core-datacash: https://github.com/izi-ecommerce/izi-core-datacash/tree/master/sandbox
 
 Integration into checkout

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-01 11:37+0700\n"
+"POT-Creation-Date: 2018-10-02 16:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3070,69 +3070,76 @@ msgid "Unable to change order status as the requested new status is not valid"
 msgstr ""
 
 #: .\src\izi\apps\dashboard\orders\views.py:628
-#: .\src\izi\apps\dashboard\orders\views.py:704
+#: .\src\izi\apps\dashboard\orders\views.py:711
 msgid "Please choose a valid amount"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:643
+#: .\src\izi\apps\dashboard\orders\views.py:644
 #, python-format
 msgid "'%(status)s' is not a valid new status for line %(line_id)d"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:652
+#: .\src\izi\apps\dashboard\orders\views.py:655
 #, python-format
 msgid ""
 "Status of line #%(line_id)d changed from '%(old_status)s' to '%(new_status)s'"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:669
-#: .\src\izi\apps\dashboard\orders\views.py:717
+#: .\src\izi\apps\dashboard\orders\views.py:661
+#, python-format
+msgid ""
+"Could not update status to '%(status)s' due to the order line # %(line_id)d "
+"does not owned by you"
+msgstr ""
+
+#: .\src\izi\apps\dashboard\orders\views.py:676
+#: .\src\izi\apps\dashboard\orders\views.py:724
 #, python-format
 msgid "The event type '%s' is not valid"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:680
-#: .\src\izi\apps\dashboard\orders\views.py:683
+#: .\src\izi\apps\dashboard\orders\views.py:687
+#: .\src\izi\apps\dashboard\orders\views.py:690
 #, python-format
 msgid "Unable to create shipping event: %s"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:685
+#: .\src\izi\apps\dashboard\orders\views.py:692
 #, python-format
 msgid "Unable to create shipping event due to payment error: %s"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:688
+#: .\src\izi\apps\dashboard\orders\views.py:695
 msgid "Shipping event created"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:723
+#: .\src\izi\apps\dashboard\orders\views.py:730
 #, python-format
 msgid "Unable to create payment event due to payment error: %s"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:727
+#: .\src\izi\apps\dashboard\orders\views.py:734
 #, python-format
 msgid "Unable to create payment event: %s"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:729
+#: .\src\izi\apps\dashboard\orders\views.py:736
 msgid "Payment event created"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:782
+#: .\src\izi\apps\dashboard\orders\views.py:789
 #, python-format
 msgid "%(field)s changed from '%(old_value)s' to '%(new_value)s'"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:815
+#: .\src\izi\apps\dashboard\orders\views.py:822
 #, python-format
 msgid ""
 "Delivery address updated:\n"
 "%s"
 msgstr ""
 
-#: .\src\izi\apps\dashboard\orders\views.py:821
+#: .\src\izi\apps\dashboard\orders\views.py:828
 msgid "Delivery address updated"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-01 11:37+0700\n"
+"POT-Creation-Date: 2018-10-02 16:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,92 +18,155 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\sandbox\settings.py:68
-msgid "Tiếng Việt"
-msgstr ""
-
-#: .\sandbox\settings.py:69
-msgid "Arabic"
-msgstr ""
-
-#: .\sandbox\settings.py:70
-msgid "Catalan"
-msgstr ""
-
-#: .\sandbox\settings.py:71
-msgid "Czech"
-msgstr ""
-
-#: .\sandbox\settings.py:72
-msgid "Danish"
-msgstr ""
-
-#: .\sandbox\settings.py:73
-msgid "German"
-msgstr ""
-
-#: .\sandbox\settings.py:74
-msgid "British English"
-msgstr ""
-
-#: .\sandbox\settings.py:75
-msgid "Greek"
-msgstr ""
-
 #: .\sandbox\settings.py:76
-msgid "Spanish"
+msgid "Vietnamese"
 msgstr ""
 
 #: .\sandbox\settings.py:77
-msgid "Finnish"
+msgid "Arabic"
 msgstr ""
 
 #: .\sandbox\settings.py:78
-msgid "French"
+msgid "Catalan"
 msgstr ""
 
 #: .\sandbox\settings.py:79
-msgid "Italian"
+msgid "Czech"
 msgstr ""
 
 #: .\sandbox\settings.py:80
-msgid "Korean"
+msgid "Danish"
 msgstr ""
 
 #: .\sandbox\settings.py:81
-msgid "Dutch"
+msgid "German"
 msgstr ""
 
 #: .\sandbox\settings.py:82
-msgid "Polish"
+msgid "British English"
 msgstr ""
 
 #: .\sandbox\settings.py:83
-msgid "Portuguese"
+msgid "american english"
 msgstr ""
 
 #: .\sandbox\settings.py:84
-msgid "Brazilian Portuguese"
+msgid "Greek"
 msgstr ""
 
 #: .\sandbox\settings.py:85
-msgid "Romanian"
+msgid "Spanish"
 msgstr ""
 
 #: .\sandbox\settings.py:86
-msgid "Russian"
+msgid "Finnish"
 msgstr ""
 
 #: .\sandbox\settings.py:87
-msgid "Slovak"
+msgid "French"
 msgstr ""
 
 #: .\sandbox\settings.py:88
-msgid "Ukrainian"
+msgid "Italian"
 msgstr ""
 
 #: .\sandbox\settings.py:89
+msgid "Korean"
+msgstr ""
+
+#: .\sandbox\settings.py:90
+msgid "Dutch"
+msgstr ""
+
+#: .\sandbox\settings.py:91
+msgid "Polish"
+msgstr ""
+
+#: .\sandbox\settings.py:92
+msgid "Portuguese"
+msgstr ""
+
+#: .\sandbox\settings.py:93
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: .\sandbox\settings.py:94
+msgid "Romanian"
+msgstr ""
+
+#: .\sandbox\settings.py:95
+msgid "Russian"
+msgstr ""
+
+#: .\sandbox\settings.py:96
+msgid "Slovak"
+msgstr ""
+
+#: .\sandbox\settings.py:97
+msgid "Ukrainian"
+msgstr ""
+
+#: .\sandbox\settings.py:98
 msgid "Simplified Chinese"
+msgstr ""
+
+#: .\sandbox\settings.py:377
+msgid "PayPal"
+msgstr ""
+
+#: .\sandbox\settings.py:381
+msgid "PayFlow transactions"
+msgstr ""
+
+#: .\sandbox\settings.py:385
+msgid "Express transactions"
+msgstr ""
+
+#: .\sandbox\templates\basket\partials\basket_content.html:11
+msgid "Proceed to checkout"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:7
+msgid "PayPal Express"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:9
+msgid ""
+"Click on the below icon to use Express Checkout but where the shipping "
+"address and method is already chosen on the merchant site."
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:10
+msgid "Pay with PayPal"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:15
+msgid "PayPal PayFlow Pro"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:19
+msgid "Bankcard"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:21
+msgid "Billing address"
+msgstr ""
+
+#: .\sandbox\templates\checkout\payment_details.html:24
+msgid "Continue"
+msgstr ""
+
+#: .\sandbox\templates\checkout\preview.html:8
+msgid "Payment"
+msgstr ""
+
+#: .\sandbox\templates\checkout\preview.html:11
+#, python-format
+msgid "<strong>%(amount)s</strong> will be debited from your bankcard."
+msgstr ""
+
+#: .\sandbox\templates\checkout\preview.html:13
+msgid "Change payment details"
 msgstr ""
 
 #: .\sandbox\templates\gateway\email.txt:2

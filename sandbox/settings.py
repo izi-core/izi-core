@@ -73,7 +73,7 @@ LANGUAGE_CODE = 'en-gb'
 # Taken from Django's default setting for LANGUAGES
 gettext_noop = lambda s: s
 LANGUAGES = (
-    ('vi', gettext_noop('Tiếng Việt')),
+    ('vi', gettext_noop('Vietnamese')),
     ('ar', gettext_noop('Arabic')),
     ('ca', gettext_noop('Catalan')),
     ('cs', gettext_noop('Czech')),
@@ -296,6 +296,7 @@ INSTALLED_APPS = [
     # Debug toolbar + extensions
     'debug_toolbar',
     'apps.gateway',     # For allowing dashboard access
+    # Requires izi-paypal
     'paypal', # For testing with shipping and payment
     'widget_tweaks',
 ] + izi.get_core_apps([

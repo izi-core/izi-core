@@ -52,6 +52,8 @@ CACHES = {
     'default': env.cache(default='locmemcache://'),
 }
 
+# IZI-Shipping
+IZI_SHIPPING_API_ENABLED = ['pecom', 'emspost']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -80,7 +82,7 @@ LANGUAGES = (
     ('da', gettext_noop('Danish')),
     ('de', gettext_noop('German')),
     ('en-gb', gettext_noop('British English')),
-    ('en-us', gettext_noop('american english')),
+    ('en-us', gettext_noop('American english')),
     ('el', gettext_noop('Greek')),
     ('es', gettext_noop('Spanish')),
     ('fi', gettext_noop('Finnish')),
@@ -296,8 +298,11 @@ INSTALLED_APPS = [
     # Debug toolbar + extensions
     'debug_toolbar',
     'apps.gateway',     # For allowing dashboard access
+    # 'apps.permissions',
+    'guardian',  # For check object permission
     # Requires izi-paypal
-    'paypal', # For testing with shipping and payment
+    'paypal',  # For testing with shipping and payment
+    'izi_shipping',
     'widget_tweaks',
 ] + izi.get_core_apps([
     'apps.shipping',
@@ -308,6 +313,8 @@ INSTALLED_APPS = [
 AUTHENTICATION_BACKENDS = (
     'izi.apps.customer.auth_backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'guardian.backends.ObjectPermissionBackend',  # New
+    'sandbox.apps.permissions.backend.ObjectPermBackend',
 )
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -342,13 +349,13 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 # Here's a sample Haystack config if using Solr (which is recommended)
-#HAYSTACK_CONNECTIONS = {
+# HAYSTACK_CONNECTIONS = {
 #    'default': {
 #        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
 #        'URL': 'http://127.0.0.1:8983/solr/izi_latest/',
 #        'INCLUDE_SPELLING': True
 #    },
-#}
+# }
 
 # =============
 # Debug Toolbar

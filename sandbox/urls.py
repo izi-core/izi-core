@@ -14,6 +14,7 @@ from apps.sitemaps import base_sitemaps
 from paypal.payflow.dashboard.app import application as payflow
 from paypal.express.dashboard.app import application as express_dashboard
 from izi_shipping.app import application as izi_application
+from izi_accounts.dashboard.app import application as accounts_app
 
 admin.autodiscover()
 
@@ -40,6 +41,7 @@ urlpatterns = [
     url(r'^dashboard/paypal/express/', express_dashboard.urls),
     # New url for izi-shipping
     url(r'^dashboard/izi-shipping/', izi_application.urls),
+    url(r'^dashboard/accounts/', accounts_app.urls),
 ]
 
 # Prefix IZI URLs with language codes

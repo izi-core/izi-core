@@ -133,6 +133,14 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
 
+
+from izi_accounts import TEMPLATE_DIR as ACCOUNTS_TEMPLATE_DIR
+
+TEMPLATE_DIRS = (
+    ACCOUNTS_TEMPLATE_DIR,
+)
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -303,6 +311,7 @@ INSTALLED_APPS = [
     # Requires izi-paypal
     'paypal',  # For testing with shipping and payment
     'izi_shipping',
+    'izi_accounts',
     'widget_tweaks',
 ] + izi.get_core_apps([
     'apps.shipping',
@@ -395,6 +404,37 @@ IZI_DASHBOARD_NAVIGATION.append(
         ]
     })
 # Taken from PayPal's documentation - these should always work in the sandbox
+# IZI_ACCOUNT DASHBOARD
+# Must edit this if change default
+ACCOUNTS_REDEMPTIONS_NAME = 'Khoản thu hồi'
+ACCOUNTS_LAPSED_NAME = 'Tài khoản hết hạn'
+ACCOUNTS_UNPAID_SOURCES = 'Nguồn chưa thanh toán'
+ACCOUNTS_BANK_NAME = 'Ngân hàng'
+
+IZI_DASHBOARD_NAVIGATION.append(
+    {
+        'label': 'Accounts',
+        'icon': 'icon-globe',
+        'children': [
+                {
+                    'label': 'Accounts',
+                    'url_name': 'accounts-list',
+                },
+            {
+                    'label': 'Transfers',
+                    'url_name': 'transfers-list',
+            },
+            {
+                    'label': 'Deferred income report',
+                    'url_name': 'report-deferred-income',
+            },
+            {
+                    'label': 'Profit/loss report',
+                    'url_name': 'report-profit-loss',
+            },
+        ]
+    })
+
 PAYPAL_SANDBOX_MODE = True
 PAYPAL_CALLBACK_HTTPS = False
 PAYPAL_API_VERSION = '119'
